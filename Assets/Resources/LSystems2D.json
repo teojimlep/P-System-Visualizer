@@ -1,0 +1,104 @@
+{
+  "LSystems": [
+    {
+      "Name": "plant_a",
+      "Axiom": "F",
+      "Rules": [
+        {
+          "predecessor": "F",
+          "successor": "F[+F]F[-F]F"
+        }
+      ],
+      "Angle": 25.7
+    },
+    {
+      "Name": "plant_b",
+      "Axiom": "F",
+      "Rules": [
+        {
+          "predecessor": "F",
+          "successor": "F[+F]F[-F][F]"
+        }
+      ],
+      "Angle": 20
+    },
+    {
+      "Name": "plant_c",
+      "Axiom": "F",
+      "Rules": [
+        {
+          "predecessor": "F",
+          "successor": "FF-[-F+F+F]+[+F-F-F]"
+        }
+      ],
+      "Angle": 22.5
+    },
+    {
+      "Name": "plant_d",
+      "Axiom": "X",
+      "Rules": [
+        {
+          "predecessor": "X",
+          "successor": "F[+X]F[-X]+X"
+        },
+        {
+          "predecessor": "F",
+          "successor": "FF"
+        }
+      ],
+      "Angle": 20
+    },
+    {
+      "Name": "plant_e",
+      "Axiom": "X",
+      "Rules": [
+        {
+          "predecessor": "X",
+          "successor": "F[+X][-X]FX"
+        },
+        {
+          "predecessor": "F",
+          "successor": "FF"
+        }
+      ],
+      "Angle": 25.7
+    },
+    {
+      "Name": "plant_f",
+      "Axiom": "X",
+      "Rules": [
+        {
+          "predecessor": "X",
+          "successor": "F-[[X]+X]+F[+FX]-X"
+        },
+        {
+          "predecessor": "F",
+          "successor": "FF"
+        }
+      ],
+      "Angle": 22.5
+    },
+    {
+      "Name": "3D-HilbertCurve",
+      "Axiom": "A",
+      "Rules": [
+        {
+          "predecessor": "A",
+          "successor":"^<AF^<AFA-F^>>AFA&F+>>AFA-F>A->"
+        }
+      ],
+      "Angle":90.0
+    },
+    {
+      "Name": "3D-Troubleshoot",
+      "Axiom": "X",
+      "Rules": [
+        {
+          "predecessor": "X",
+          "successor":"F>+F-F"
+        }
+      ],
+      "Angle":90.0
+    }
+  ]
+}
