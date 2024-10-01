@@ -19,7 +19,7 @@ public class PSystemVisualizer : MonoBehaviour
         if (length > 0f)
         {
             // Debug line
-            Debug.DrawLine(startPos, endPos, Color.red, 60f);
+            //Debug.DrawLine(startPos, endPos, Color.red, 60f);
 
             // Scaling of the prefab object before instantiating. 
             // Scale is based on the prefab dimensions (cilinder of R=1, L=2; Length is y-axis)
@@ -41,15 +41,19 @@ public class PSystemVisualizer : MonoBehaviour
     public void DrawMembrane(Membrane drawnMembrane)
     {
         // Counting the number of W's and F's to determine the width and length of the created branch
-        float branchRadius = drawnMembrane.Multiset["W"] * this.BranchUnitRadius;
+        float branchRadius = (1 + Mathf.Log(drawnMembrane.Multiset["W"])) * this.BranchUnitRadius;
         float branchLength = drawnMembrane.Multiset["F"]*  this.BranchUnitLength;
         // Determining the net count of +'s to determine the angle to be rotated
-        float rotationAngleMultiplier = drawnMembrane.Multiset["+"] - drawnMembrane.Multiset["-"];
+        float upRotationAngleMultiplier = drawnMembrane.Multiset["+"] - drawnMembrane.Multiset["-"];        
+        float leftRotationAngleMultiplier = drawnMembrane.Multiset["&"] - drawnMembrane.Multiset["^"];
+        float headRotationAngleMultiplier = drawnMembrane.Multiset[">"] - drawnMembrane.Multiset["<"];
 
         // Turtle operations:
         Vector3 startPos = _turtle.State.Position; // Store initial position
         // Turtle rotates, advances and pushes its state into its stack
-        _turtle.Rotate(rotationAngleMultiplier*this.Angle, _turtle.State.Orientation.up); // Rotate first
+        _turtle.Rotate(upRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.up); // Rotate first
+        _turtle.Rotate(leftRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.left); // Rotate first
+        _turtle.Rotate(headRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.head); // Rotate first
         _turtle.Forward(branchLength); // Once rotated, the turtle can advance the desired distance
 
         // Creation of the branch after the turtle operations:
