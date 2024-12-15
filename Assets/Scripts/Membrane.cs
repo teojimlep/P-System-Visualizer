@@ -462,10 +462,12 @@ public class Membrane
     {
         for (int iter = 0; iter < nIterations; iter++)
         {
+            /*
             Debug.Log($"Evolving membrane: {this.ToString()}");
             Debug.Log($"Hierarchy: {this.GetHierarchy()}");
             Debug.Log($"Iteration: {iter + 1}");
             Debug.Log($"Number of rules: {this.Rules.Count}");
+            */
 
             // Maybe shuffle rules first to ensure fair choices
             Multiset totalProducedMultiset = new();
@@ -518,12 +520,12 @@ public class Membrane
                 // Iterate cyclically over usableRules adapting to the changing length of the list
                 i%=usableRules.Count;
             }
-            Debug.Log("Reactives available for iteration have been depleted");
+            //Debug.Log("Reactives available for iteration have been depleted");
 
             // Apply rules to inner membranes
             foreach (Membrane innerMembrane in this.InnerMembranes)
             {
-                Debug.Log($"Found inner membrane: {innerMembrane.ToString()}");
+                //Debug.Log($"Found inner membrane: {innerMembrane.ToString()}");
                 innerMembrane.Evolve();
             }
 
@@ -536,7 +538,7 @@ public class Membrane
             //  - Multiset
             this.UpdateMultiset(totalProducedMultiset);
         }
-        Debug.Log($"Result of the iteration: {this.ToString()}");
+        //Debug.Log($"Result of the iteration: {this.ToString()}");
     }
     
     // Method to recursively create a deep copy of the Membrane

@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BranchPrefab: {fileID: 6620885749791743188, guid: 5bbec786c95c4a340a862761ce5b67cc, type: 3}
-  BranchUnitLength: 1
-  BranchUnitRadius: 0.25
+  BranchUnitLength: 0.15
+  BranchUnitRadius: 0.0375
   Angle: 22.5
