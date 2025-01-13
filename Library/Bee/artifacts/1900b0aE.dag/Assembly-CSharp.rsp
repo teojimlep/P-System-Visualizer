@@ -358,6 +358,7 @@
 "Assets/Scripts/PTree.cs"
 "Assets/Scripts/RuleCollector.cs"
 "Assets/Scripts/RuleManager.cs"
+"Assets/Scripts/RuleSetter.cs"
 "Assets/Scripts/SceneLoader.cs"
 "Assets/Scripts/Turtle.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

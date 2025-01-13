@@ -475,15 +475,23 @@ public class Membrane
             List<PSystemRule> usableRules = new();
             foreach (PSystemRule ruleToCopy in this.Rules)
             {
-                usableRules.Add(ruleToCopy.Copy());
+                if (ruleToCopy.CanBeAppliedTo(this.Multiset))
+                {
+                    usableRules.Add(ruleToCopy.Copy());
+                }
             }
             // Use reactives in a maximally parallel way. 
             //  - Maximally: Apply rules randomly until none of them can be used due to lack of needed reactives
             //  - Paralelly: Save products (multisets and membranes) to incorporate them later 
-            int i = 0;
-            while (this.CanEvolve(usableRules))
+            List<int> ruleIndices = Enumerable.Range(0, usableRules.Count).ToList();
+            Debug.Log("Original Indices: " + string.Join(", ", ruleIndices));
+            System.Random rng = new System.Random();
+            ruleIndices = ruleIndices.OrderBy(x => rng.Next()).ToList();
+            Debug.Log("Shuffled Indices: " + string.Join(", ", ruleIndices));
+            foreach (int i in ruleIndices)
             {
-                if (usableRules[i].CanBeAppliedTo(this.Multiset))
+                Debug.Log(i);
+                while (usableRules[i].CanBeAppliedTo(this.Multiset))
                 {
                     // Get specific rule to use
                     PSystemRule usingRule = usableRules[i];
@@ -504,21 +512,9 @@ public class Membrane
                         totalProducedMembranes.Add(membrane.Copy());
                     }
                     // Prepare index to handle the next rule in usableRules
-                    i++;
                 }
-                else
-                {
-                    // Remove unusable rule from the list of usable rules
-                    usableRules.RemoveAt(i);
-                }
-
-                // Safety measure to avoid divide by zero error
-                if (usableRules.Count == 0)
-                {
-                    break; // No more usable rules
-                }
-                // Iterate cyclically over usableRules adapting to the changing length of the list
-                i%=usableRules.Count;
+                // Once the rule an no longer be applied, remove from the list of usable rules
+                // usableRules.RemoveAt(i); // Not suitable for this implementation
             }
             //Debug.Log("Reactives available for iteration have been depleted");
 

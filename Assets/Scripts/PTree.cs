@@ -138,15 +138,15 @@ public class PTree : MonoBehaviour
             };
             PSystemRule ruleBp = new(reactiveMultiset: "(Bp:1)", possibleProductBp);
             PSystemRule ruleBm = new(reactiveMultiset: "(Bm:1)", possibleProductBm);
+            PSystemRule ruleBpa = new(reactiveMultiset: "(Bp:1)", possibleProductBa);
             PSystemRule ruleBa = new(reactiveMultiset: "(Ba:1)", possibleProductBa);
             PSystemRule ruleBc = new(reactiveMultiset: "(Bc:1)", possibleProductBc);
             PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL);
-            rules = new() {ruleBp, ruleBm, ruleBa, ruleBc, ruleL};
+            rules = new() {ruleBp, ruleBm, ruleBa, ruleBc, ruleL, ruleBpa};
         }
         return rules;
     }
     
-
     public void InitTreeMembrane()
     {
         List<PSystemRule> rules =  this.GetRules();

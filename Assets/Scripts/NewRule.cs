@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NewRule : MonoBehaviour
 {
-    public GameObject uiPrefab; // Assign your prefab here
+    public GameObject uiPrefab; // Assign prefab 
     public Transform parent; // Assign the parent where the new elements will be placed
     private int ruleCount = 2; // Counter to track the number of copies
 
@@ -13,6 +13,7 @@ public class NewRule : MonoBehaviour
     {
         if (uiPrefab != null && parent != null && ruleCount<13)
         {
+            Debug.Log("i am doing something");
             // Instantiate a new copy of the prefab
             GameObject newElement = Instantiate(uiPrefab, parent);
 
