@@ -353,7 +353,6 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Membrane.cs"
-"Assets/Scripts/NewRule.cs"
 "Assets/Scripts/PSystemVisualizer.cs"
 "Assets/Scripts/PTree.cs"
 "Assets/Scripts/RuleCollector.cs"

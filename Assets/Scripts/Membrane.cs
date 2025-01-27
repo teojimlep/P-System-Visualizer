@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
 using System.Text;
+using TMPro;
 
 public class PSystemBuilder
 {
@@ -71,9 +72,18 @@ public class PSystemBuilder
         StringBuilder innerMembranesStringBuilder = new();
         bool collectMultiset = false;
         bool collectMembranes = false;
+        char label = '0';
 
         int nOpeningBrackets = 0;
-        int nClosingBrackets = 0;
+        //int nClosingBrackets = 0;
+
+        if (easyMembrane.Length >= 2 && easyMembrane[^2] == '_')
+        {
+            // Get the label from easyMembrane
+            label = easyMembrane[^1];
+            // Remove the last two characters from the string
+            easyMembrane = easyMembrane.Substring(0, easyMembrane.Length - 2);
+        }
 
         foreach (char c in easyMembrane)
         {
@@ -90,28 +100,33 @@ public class PSystemBuilder
                     collectMembranes = true;
                 }
             }
-            else if (c == ']')
-            {
-                nClosingBrackets += 1;
-            }
+            //else if (c == ']')
+            //{
+            //    nClosingBrackets += 1;
+            //}
             else if (collectMultiset)
             {
                 multisetStringBuilder.Append(c);
             }
-
-            if (nOpeningBrackets == nClosingBrackets)
-            {
-                collectMembranes = false;
-            }
+            //if (nOpeningBrackets == nClosingBrackets)
+            //{
+            //    collectMembranes = false;
+            //}
             if (collectMembranes)
             {
                 innerMembranesStringBuilder.Append(c);
             }
         }
+        // Remove the last ']' char, which is not part of the list of easy inner membranes
+        if (innerMembranesStringBuilder.Length > 0)
+        {        
+            innerMembranesStringBuilder.Length -= 1;
+        }
 
         // Create multiset and apply it in the built membrane
         Multiset multiset = new(easyMultiset: multisetStringBuilder.ToString());
-        builtMembrane.Multiset = multiset;
+        builtMembrane.Multiset = multiset;    
+        builtMembrane.Label = label;
 
         // Create list of easy inner membranes
         List<string> easyInnerMembranes = SeparateEasyInnerMembranes(innerMembranesString: innerMembranesStringBuilder.ToString());
@@ -384,6 +399,7 @@ public class Membrane
     public Multiset Multiset;
     public List<PSystemRule> Rules;
     public bool InheritingRules;
+    public char Label;
 
     public Membrane(string easyMembrane = null, Membrane parentMembrane = null, List<Membrane> innerMembranes = null, Multiset multiset = null, List<PSystemRule> rules = null, bool inheritingRules = true)
     {
@@ -392,8 +408,10 @@ public class Membrane
         this.InheritingRules = inheritingRules;
         if (easyMembrane != null)
         {
+            Debug.Log($"Easy Membrane: {easyMembrane}");
             this.InnerMembranes = new List<Membrane>();   
             this.Multiset = new Multiset();
+            this.Label = '0';
             PSystemBuilder.BuildMembrane(this, easyMembrane);
         }
         else
@@ -401,6 +419,7 @@ public class Membrane
             this.InnerMembranes = innerMembranes ?? new List<Membrane>();   
             this.Multiset = multiset ?? new Multiset();
         }
+        Debug.Log($"Created membrane: {this.ToString()}");
     }
 
     // Method to recursively calculate the hierarchy of the membrane.
@@ -484,13 +503,13 @@ public class Membrane
             //  - Maximally: Apply rules randomly until none of them can be used due to lack of needed reactives
             //  - Paralelly: Save products (multisets and membranes) to incorporate them later 
             List<int> ruleIndices = Enumerable.Range(0, usableRules.Count).ToList();
-            Debug.Log("Original Indices: " + string.Join(", ", ruleIndices));
+            //Debug.Log("Original Indices: " + string.Join(", ", ruleIndices));
             System.Random rng = new System.Random();
             ruleIndices = ruleIndices.OrderBy(x => rng.Next()).ToList();
-            Debug.Log("Shuffled Indices: " + string.Join(", ", ruleIndices));
+            //Debug.Log("Shuffled Indices: " + string.Join(", ", ruleIndices));
             foreach (int i in ruleIndices)
             {
-                Debug.Log(i);
+                //Debug.Log(i);
                 while (usableRules[i].CanBeAppliedTo(this.Multiset))
                 {
                     // Get specific rule to use
@@ -570,6 +589,8 @@ public class Membrane
         }
         // End of the membrane
         items.Add("]");
+        items.Add("_");
+        items.Add(Label.ToString());
         return $"{string.Join("", items)}";
     }
 }

@@ -15,7 +15,7 @@ public class RuleCollector : MonoBehaviour
         {
             // Access the TMP_InputField directly under MulPredecessor and MulSucessor
             TMP_InputField predecessorInput = rule.Find("MulPredecessor").GetComponentInChildren<TMP_InputField>();
-            TMP_InputField successorInput = rule.Find("MulSucessor").GetComponentInChildren<TMP_InputField>();
+            TMP_InputField successorInput = rule.Find("MulSuccessor").GetComponentInChildren<TMP_InputField>();
 
             if (predecessorInput != null && successorInput != null)
             {
