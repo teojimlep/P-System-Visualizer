@@ -11,9 +11,13 @@ using System.Text;
 using TMPro;
 
 public class PSystemBuilder
+
 {
-    // Build a multiset from a string of well structured characters
-    // Example: "(A:2)(R:3)(G:65)"
+    // Given an input string, a multiset entry is extracted from the string.
+    // Example: 
+    //      - Input:  (R:3)(G:65)[(A:2)][(B:1)][(D:12)(A:1)[(C:3)]]
+    //      - Outputs:  (R:3)
+    //                  (G:65)[(A:2)][(B:1)][(D:12)(A:1)[(C:3)]]
     public static void BuildMultiset(Multiset builtMultiset, string easyMultiset)
     {
         // Variables to store the key and value as they are being built
@@ -42,7 +46,7 @@ public class PSystemBuilder
             else if (c == ')')
             {
                 // Finished building value, add to multiset
-                builtMultiset[newKey.ToString()] = int.Parse(newValue.ToString());
+                builtMultiset[newKey.ToString()] += int.Parse(newValue.ToString());
                 buildKey = false;
                 buildValue = false;
             }
@@ -64,72 +68,166 @@ public class PSystemBuilder
             }
         }
     }
+    
+    public static (string, string) ExtractMultisetEntry(string input)
+    {
+        Debug.LogWarning($"Mentry Input: {input}.");
+        // Check if the input string is non-empty and it starts with '('
+        if (string.IsNullOrEmpty(input) || input[0] != '(')
+        {
+            throw new Exception("A multiset entry must start with (");
+        }
+
+        // Initialize the multiset entry to be extracted
+        string multisetEntry = "";
+
+        // Iterate over the characters of the input string
+        foreach (char c in input)
+        {
+            // Build the mutiset entry
+            multisetEntry += c;
+            if (c == ')')
+            {
+                break;
+            }
+        }
+
+        Debug.LogWarning($"Mentry: {multisetEntry}.");
+        // Validate multiset entry
+        if (!multisetEntry.Contains(':'))
+        {
+            throw new Exception("Missing ':' character to separate key:value");
+        }
+        if (!multisetEntry.Contains(')'))
+        {
+            throw new Exception("Parentheses mismatch");
+        }
+        return (multisetEntry, input.Substring(multisetEntry.Length));
+    }
+
+
+    // Given an input string, a membrane is extracted from the string.
+    // Example: 
+    //      - Input:  [(A:2)][(B:1)][(D:12)(A:1)[(C:3)]]
+    //      - Outputs:  [(A:2)]
+    //                  [(B:1)][(D:12)(A:1)[(C:3)]]
+    public static (string, string) ExtractMembrane(string input)
+    {
+        // Check if the input string is non-empty and it starts with '['
+        if (string.IsNullOrEmpty(input) || input[0] != '[')
+        {
+            throw new Exception("A membrane must start with [");
+        }
+
+        // Initialize a bracket counter, which increases with ']' and decreases with '['. 
+        // When brackets are compensated, the counter will be zero and the membrane will be extracted.
+        int bracketCounter = 0;
+        // Initialize the membrane to be extracted
+        string membrane = "";
+
+        // Iterate over the characters of the input string
+        for (int i = 0; i < input.Length; i++)
+        {
+            // When the bracket counter gets to zero, we are dealing with the closing of
+            // the extracted membrane.
+            if (bracketCounter == 0 && i > 0)
+            {
+                if (input[i] == '_')
+                {
+                    // A label (k) could be found it the end of the membrane is "]_k"
+                    if (i + 1 < input.Length && !"[(".Contains(input[i + 1]))
+                    {
+                        membrane += "_" + input[i + 1];
+                    }
+                    else
+                    {
+                        throw new Exception("Invalid label character");
+                    }
+                }
+                // After looking for a label, we are ready to extract the membrane
+                // As a second output, the rest of the string is provided 
+                return (membrane, input.Substring(membrane.Length));
+            }
+            // If the bracket counter is not zero yet, the membrane keeps growing
+            membrane += input[i];
+            
+            // The bracket counter gets updated
+            if (input[i] == '[')
+                bracketCounter++;
+            else if (input[i] == ']')
+                bracketCounter--;
+        }
+        return (membrane, input.Substring(membrane.Length));
+        //throw new Exception("Bracket mismatch");
+    }
+
+    public static (char label, List<string> multisets, List<string> innerMembranes) GetMembraneContent(string membrane)
+    {
+        if (string.IsNullOrEmpty(membrane))
+        {
+            throw new ArgumentException("Membrane string cannot be empty.");
+        }
+
+        string content;
+        char label = '0'; // Default label
+
+        if (membrane[^1] == ']') // Último carácter es ']'
+        {
+            content = membrane[1..^1];
+        }
+        else if (membrane.Length > 2 && membrane[^2] == '_') // Últimos caracteres son "_X"
+        {
+            if (!"[](".Contains(membrane[^1]))
+            {
+                content = membrane[1..^3];
+                label = membrane[^1];
+            }
+            else
+            {
+                throw new Exception("Invalid label character");
+            }
+        }
+        else
+        {
+            throw new Exception("Invalid membrane format. Membranes must end in ] or _tag");
+        }
+
+        List<string> multisets = new List<string>();
+        List<string> innerMembranes = new List<string>();
+
+        while (!string.IsNullOrEmpty(content))
+        {
+            if (content[0] == '(')
+            {
+                (string extractedMultiset, string remainingContent) = ExtractMultisetEntry(content);
+                multisets.Add(extractedMultiset);
+                content = remainingContent;
+            }
+            else if (content[0] == '[')
+            {
+                (string extractedMembrane, string remainingContent) = ExtractMembrane(content);
+                innerMembranes.Add(extractedMembrane);
+                content = remainingContent;
+            }
+            else
+            {
+                throw new Exception("Unexpected character in membrane content");
+            }
+        }
+
+        return (label, multisets, innerMembranes);
+    }
 
     public static void BuildMembrane(Membrane builtMembrane, string easyMembrane)
     {
-        // Variables to store the multiset and inner membranes as they are being built
-        StringBuilder multisetStringBuilder = new();
-        StringBuilder innerMembranesStringBuilder = new();
-        bool collectMultiset = false;
-        bool collectMembranes = false;
-        char label = '0';
-
-        int nOpeningBrackets = 0;
-        //int nClosingBrackets = 0;
-
-        if (easyMembrane.Length >= 2 && easyMembrane[^2] == '_')
-        {
-            // Get the label from easyMembrane
-            label = easyMembrane[^1];
-            // Remove the last two characters from the string
-            easyMembrane = easyMembrane.Substring(0, easyMembrane.Length - 2);
-        }
-
-        foreach (char c in easyMembrane)
-        {
-            if (c == '[')
-            {
-                nOpeningBrackets += 1;
-                if (nOpeningBrackets == 1)
-                {
-                    collectMultiset = true;
-                }
-                else if (nOpeningBrackets == 2)
-                {
-                    collectMultiset = false;
-                    collectMembranes = true;
-                }
-            }
-            //else if (c == ']')
-            //{
-            //    nClosingBrackets += 1;
-            //}
-            else if (collectMultiset)
-            {
-                multisetStringBuilder.Append(c);
-            }
-            //if (nOpeningBrackets == nClosingBrackets)
-            //{
-            //    collectMembranes = false;
-            //}
-            if (collectMembranes)
-            {
-                innerMembranesStringBuilder.Append(c);
-            }
-        }
-        // Remove the last ']' char, which is not part of the list of easy inner membranes
-        if (innerMembranesStringBuilder.Length > 0)
-        {        
-            innerMembranesStringBuilder.Length -= 1;
-        }
-
-        // Create multiset and apply it in the built membrane
-        Multiset multiset = new(easyMultiset: multisetStringBuilder.ToString());
+        var (label, multisetEntries, easyInnerMembranes) = PSystemBuilder.GetMembraneContent(easyMembrane);
+        Console.WriteLine($"Label: {label}");
+        // Append multisetEntries, which are strings, into a single string
+        string easyMultiset = string.Join("", multisetEntries);
+        Multiset multiset = new(easyMultiset: easyMultiset);
         builtMembrane.Multiset = multiset;    
         builtMembrane.Label = label;
 
-        // Create list of easy inner membranes
-        List<string> easyInnerMembranes = SeparateEasyInnerMembranes(innerMembranesString: innerMembranesStringBuilder.ToString());
         foreach (string easyInnerMembrane in easyInnerMembranes)
         {
             // Create inner membrane 
@@ -150,42 +248,6 @@ public class PSystemBuilder
         builtProduct.ProductMembranes = auxMembrane.InnerMembranes;
     }
 
-    // From a string containing several membranes and no main multiset (only the multisets in the membranes),
-    // extracct the list of separate membranes inside.
-    // Example:
-    //  - Input: "[(A:2)][(B:1)][(D:12)(A:1)[(C:3)]]"
-    //  - Output: "[(A:2)]", "[(B:1)]", "[(D:12)(A:1)[(C:3)]]".
-    public static List<string> SeparateEasyInnerMembranes(string innerMembranesString)
-    {
-        List<string> easyInnerMembranes = new();
-        StringBuilder currentMembraneBuilder = new();
-        int closedBracketsNeeded = 0;
-
-        foreach (char c in innerMembranesString)
-        {
-            // Add current character
-            currentMembraneBuilder.Append(c);
-            if (c == '[')
-            {
-                // Delay the closing of the brackets
-                closedBracketsNeeded += 1;
-            }
-            else if (c == ']')
-            {
-                // Accelerate the closing of the brackets
-                closedBracketsNeeded-=1;
-                // Close the brackets. A valid membrane has been encapsulated in a string builder
-                if (closedBracketsNeeded == 0)
-                {
-                    // Store the easy membrane string in the list of easy inner membranes
-                    easyInnerMembranes.Add(currentMembraneBuilder.ToString());
-                    // Restart the membrane builder
-                    currentMembraneBuilder.Clear();
-                }
-            }
-        }
-        return easyInnerMembranes;
-    }
 }
 
 public class PSystemProduct
