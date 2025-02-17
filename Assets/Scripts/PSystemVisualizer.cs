@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Diagnostics.Tracing;
+using UnityEngine.Animations;
 
 public class PSystemVisualizer : MonoBehaviour
 {
@@ -13,18 +15,17 @@ public class PSystemVisualizer : MonoBehaviour
     public Turtle _turtle;
     public Turtle Turtle{get{return this._turtle;}set{this._turtle=value;}}
 
-    public void CreateBranch(Vector3 startPos, Vector3 endPos, float branchRadius)
+    public GameObject CreateBranch(Vector3 startPos, Vector3 endPos, float branchRadius, string name, GameObject parentObject)
     {
         float length = Vector3.Distance(startPos, endPos);
         if (length > 0f)
         {
             // Debug line
-            //Debug.DrawLine(startPos, endPos, Color.red, 60f);
-
-            // Scaling of the prefab object before instantiating. 
-            // Scale is based on the prefab dimensions (cilinder of R=1, L=2; Length is y-axis)
-            BranchPrefab.transform.localScale = new Vector3(branchRadius, length/2f, branchRadius);
+            Debug.DrawLine(startPos, endPos, Color.red, 60f);
             
+            // Scale prefab before
+            BranchPrefab.transform.localScale = new Vector3(branchRadius, length/2f, branchRadius);
+
             // Spawning characteristics of the branch 
             Vector3 spawnPosition = Vector3.Lerp(startPos, endPos, 0.5f);
             Vector3 Orientation = Vector3.Normalize(endPos - startPos);
@@ -32,13 +33,20 @@ public class PSystemVisualizer : MonoBehaviour
             
             // Instantiation of the branch game object
             GameObject createdBranch = Instantiate(BranchPrefab, spawnPosition, spawnRotation, transform);
-
+            //if (parentObject!=null)
+            //{
+            //    createdBranch.transform.SetParent(parentObject.transform, true);
+            //}
             // Renaming that could be more suitable if related to the hierarchy of the corresponding membrane
-            // createdBranch.name = "Branch_" + NumBranches.ToString();
-        }   
+            createdBranch.name = name;
+            
+            return createdBranch;
+        }
+
+        return null;
     }
 
-    public void DrawMembrane(Membrane drawnMembrane)
+    public void DrawMembrane(Membrane drawnMembrane, GameObject parentObject)
     {
         // Counting the number of W's and F's to determine the width and length of the created branch
         float branchRadius = (1 + Mathf.Log(drawnMembrane.Multiset["W"])) * this.BranchUnitRadius;
@@ -56,14 +64,17 @@ public class PSystemVisualizer : MonoBehaviour
         _turtle.Rotate(headRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.head); // Rotate first
         _turtle.Forward(branchLength); // Once rotated, the turtle can advance the desired distance
 
+        // Name of the branch
+        string name = "Branch" + drawnMembrane.GetHierarchy();
+
         // Creation of the branch after the turtle operations:
-        this.CreateBranch(startPos, _turtle.State.Position, branchRadius);
+        GameObject createdBranch = this.CreateBranch(startPos, _turtle.State.Position, branchRadius, name, parentObject);
 
         // Iterate over the inner membranes repeating this process recursively
         foreach (Membrane innerMembrane in drawnMembrane.InnerMembranes)
         {        
             _turtle.PushState(); // Saving current state
-            this.DrawMembrane(innerMembrane); // Draw inner membrane
+            this.DrawMembrane(innerMembrane, createdBranch); // Draw inner membrane
             _turtle.PopState(); // Going back to previous state
         }
     }

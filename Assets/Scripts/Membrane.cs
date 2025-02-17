@@ -71,7 +71,6 @@ public class PSystemBuilder
     
     public static (string, string) ExtractMultisetEntry(string input)
     {
-        Debug.LogWarning($"Mentry Input: {input}.");
         // Check if the input string is non-empty and it starts with '('
         if (string.IsNullOrEmpty(input) || input[0] != '(')
         {
@@ -92,7 +91,7 @@ public class PSystemBuilder
             }
         }
 
-        Debug.LogWarning($"Mentry: {multisetEntry}.");
+        //Debug.LogWarning($"Mentry: {multisetEntry}.");
         // Validate multiset entry
         if (!multisetEntry.Contains(':'))
         {
@@ -245,7 +244,12 @@ public class PSystemBuilder
         Membrane auxMembrane = new(easyMembrane: auxEasyMembrane);
         // Use the build auxiliary membrane to build the builtProduct
         builtProduct.ProductMultiset = auxMembrane.Multiset;
+        //Debug.Log($"Generating product multiset {builtProduct.ProductMultiset}");
         builtProduct.ProductMembranes = auxMembrane.InnerMembranes;
+        //foreach (Membrane innerMembrane in builtProduct.ProductMembranes) 
+        //{
+        //    Debug.Log($"Generating product membrane {innerMembrane}");
+        //}
     }
 
 }
@@ -459,18 +463,13 @@ public class Membrane
     public Membrane ParentMembrane;
     public List<Membrane> InnerMembranes;
     public Multiset Multiset;
-    public List<PSystemRule> Rules;
-    public bool InheritingRules;
     public char Label;
 
-    public Membrane(string easyMembrane = null, Membrane parentMembrane = null, List<Membrane> innerMembranes = null, Multiset multiset = null, List<PSystemRule> rules = null, bool inheritingRules = true)
+    public Membrane(string easyMembrane = null, Membrane parentMembrane = null, List<Membrane> innerMembranes = null, Multiset multiset = null)
     {
         this.ParentMembrane = parentMembrane;    
-        this.Rules = rules ?? new List<PSystemRule>();
-        this.InheritingRules = inheritingRules;
         if (easyMembrane != null)
         {
-            Debug.Log($"Easy Membrane: {easyMembrane}");
             this.InnerMembranes = new List<Membrane>();   
             this.Multiset = new Multiset();
             this.Label = '0';
@@ -481,7 +480,6 @@ public class Membrane
             this.InnerMembranes = innerMembranes ?? new List<Membrane>();   
             this.Multiset = multiset ?? new Multiset();
         }
-        Debug.Log($"Created membrane: {this.ToString()}");
     }
 
     // Method to recursively calculate the hierarchy of the membrane.
@@ -494,16 +492,6 @@ public class Membrane
         }
         return this.ParentMembrane.GetHierarchy() + 1;
     }
-    
-    // Make every inner membrane follow the rules of this membrane
-    public void TeachRules()
-    {
-        foreach (Membrane innerMembrane in this.InnerMembranes)
-        {
-            innerMembrane.Rules = this.Rules;
-            innerMembrane.TeachRules();
-        }
-    }
 
     // Add a membrane to the list of InnerMembranes
     // Make this membrane its parent
@@ -511,12 +499,6 @@ public class Membrane
     {
         this.InnerMembranes.Add(childMembrane);
         childMembrane.ParentMembrane = this;
-
-        if (this.InheritingRules)
-        {
-        childMembrane.Rules = this.Rules;
-        childMembrane.TeachRules();
-        }
     }
 
     // Combine the multiset of this membrane with the productMultiset
@@ -538,102 +520,11 @@ public class Membrane
         return false;
     }
 
-    // Apply rules to this membrane and its inner ones
-    public void Evolve(int nIterations = 1)
-    {
-        for (int iter = 0; iter < nIterations; iter++)
-        {
-            /*
-            Debug.Log($"Evolving membrane: {this.ToString()}");
-            Debug.Log($"Hierarchy: {this.GetHierarchy()}");
-            Debug.Log($"Iteration: {iter + 1}");
-            Debug.Log($"Number of rules: {this.Rules.Count}");
-            */
-
-            // Maybe shuffle rules first to ensure fair choices
-            Multiset totalProducedMultiset = new();
-            List<Membrane> totalProducedMembranes = new();
-            List<PSystemRule> usableRules = new();
-            foreach (PSystemRule ruleToCopy in this.Rules)
-            {
-                if (ruleToCopy.CanBeAppliedTo(this.Multiset))
-                {
-                    usableRules.Add(ruleToCopy.Copy());
-                }
-            }
-            // Use reactives in a maximally parallel way. 
-            //  - Maximally: Apply rules randomly until none of them can be used due to lack of needed reactives
-            //  - Paralelly: Save products (multisets and membranes) to incorporate them later 
-            List<int> ruleIndices = Enumerable.Range(0, usableRules.Count).ToList();
-            //Debug.Log("Original Indices: " + string.Join(", ", ruleIndices));
-            System.Random rng = new System.Random();
-            ruleIndices = ruleIndices.OrderBy(x => rng.Next()).ToList();
-            //Debug.Log("Shuffled Indices: " + string.Join(", ", ruleIndices));
-            foreach (int i in ruleIndices)
-            {
-                //Debug.Log(i);
-                while (usableRules[i].CanBeAppliedTo(this.Multiset))
-                {
-                    // Get specific rule to use
-                    PSystemRule usingRule = usableRules[i];
-                    // Substract used objects from the current multiset
-                    Multiset reactiveMultiset = new(easyMultiset: usingRule.ReactiveMultiset);
-                    this.UpdateMultiset(reactiveMultiset.GetInverse());
-
-                    // Get the product randomly produced by the rule (through its probabilities)
-                    PSystemProduct pSystemProduct = new(easyProduct: usingRule.SelectRandomProduct());
-                    Multiset productMultiset = pSystemProduct.ProductMultiset;
-                    List<Membrane> productMembranes = pSystemProduct.ProductMembranes;
-
-                    // Add products to the totalProducedMultiset
-                    totalProducedMultiset.CombineWith(productMultiset);
-                    // Add produced membranes to the list of produced membranes
-                    foreach (Membrane membrane in productMembranes)
-                    {
-                        totalProducedMembranes.Add(membrane.Copy());
-                    }
-                    // Prepare index to handle the next rule in usableRules
-                }
-                // Once the rule an no longer be applied, remove from the list of usable rules
-                // usableRules.RemoveAt(i); // Not suitable for this implementation
-            }
-            //Debug.Log("Reactives available for iteration have been depleted");
-
-            // Apply rules to inner membranes
-            foreach (Membrane innerMembrane in this.InnerMembranes)
-            {
-                //Debug.Log($"Found inner membrane: {innerMembrane.ToString()}");
-                innerMembrane.Evolve();
-            }
-
-            // Incorporate the products
-            //  - Membranes
-            foreach (Membrane incorporatingMembrane in totalProducedMembranes)
-            {
-                this.IncorporateMembrane(incorporatingMembrane);
-            }
-            //  - Multiset
-            this.UpdateMultiset(totalProducedMultiset);
-        }
-        //Debug.Log($"Result of the iteration: {this.ToString()}");
-    }
-    
     // Method to recursively create a deep copy of the Membrane
     public Membrane Copy()
     {
-        // Copy the Multiset
-        Multiset MultisetCopy = this.Multiset.Copy();
-        // Create copy of the top level of this membrane 
-        // (parentMembrane = null, innerMembranes = null)
-        Membrane MembraneCopy = new Membrane(multiset: MultisetCopy, rules: this.Rules);
-        // Add inner structure of membranes
-        // Update parent membranes
-        foreach (Membrane childMembrane in this.InnerMembranes)
-        {
-            MembraneCopy.IncorporateMembrane(childMembrane.Copy());
-        }
-        // Return copy
-        return MembraneCopy;
+        Membrane membraneCopy = new(easyMembrane: this.ToString());
+        return membraneCopy;
     }
 
     // Override ToString() to represent Membrane
@@ -655,4 +546,101 @@ public class Membrane
         items.Add(Label.ToString());
         return $"{string.Join("", items)}";
     }
+}
+
+public class PSystem
+{
+    public string MembraneString;
+    public List<PSystemRule> Rules;
+    
+    public PSystem(string membraneString, List<PSystemRule> rules)
+    {
+        this.MembraneString = membraneString;
+        this.Rules = rules;
+    }
+
+    public Membrane GetMembrane(string membraneString)
+    {
+        if (membraneString == null)
+        {
+            membraneString = this.MembraneString;
+        }
+        Membrane membrane = new(easyMembrane:membraneString);        
+        return membrane;
+    }
+
+    public void EvolveMembrane(Membrane membrane = null, int nIterations = 1, int depth = 0)
+    {
+        if (membrane == null)
+        {
+            membrane = this.GetMembrane(this.MembraneString);
+        }
+        for (int iter = 0; iter < nIterations; iter++)
+        {
+            Multiset totalProducedMultiset = new();
+            List<Membrane> totalProducedMembranes = new();
+            List<PSystemRule> usableRules = new();
+            foreach (PSystemRule ruleToCopy in this.Rules)
+            {
+                if (ruleToCopy.CanBeAppliedTo(membrane.Multiset))
+                {
+                    usableRules.Add(ruleToCopy.Copy());
+                }
+            }
+            // Use reactives in a maximally parallel way. 
+            //  - Maximally: Apply rules randomly until none of them can be used due to lack of needed reactives
+            //  - Paralelly: Save products (multisets and membranes) to incorporate them later 
+            List<int> ruleIndices = Enumerable.Range(0, usableRules.Count).ToList();
+            System.Random rng = new System.Random();
+            ruleIndices = ruleIndices.OrderBy(x => rng.Next()).ToList();
+            
+            foreach (int i in ruleIndices)
+            {
+                while (usableRules[i].CanBeAppliedTo(membrane.Multiset))
+                {
+                    // Get specific rule to use
+                    PSystemRule usingRule = usableRules[i];
+                    // Substract used objects from the current multiset
+                    Multiset reactiveMultiset = new(easyMultiset: usingRule.ReactiveMultiset);
+                    membrane.UpdateMultiset(reactiveMultiset.GetInverse());
+
+                    // Get the product randomly produced by the rule (through its probabilities)
+                    PSystemProduct pSystemProduct = new(easyProduct: usingRule.SelectRandomProduct());
+                    Multiset productMultiset = pSystemProduct.ProductMultiset;
+                    List<Membrane> productMembranes = pSystemProduct.ProductMembranes;
+
+                    // Add products to the totalProducedMultiset
+                    totalProducedMultiset.CombineWith(productMultiset);
+                    // Add produced membranes to the list of produced membranes
+                    foreach (Membrane productMembrane in productMembranes)
+                    {
+                        totalProducedMembranes.Add(productMembrane.Copy());
+                    }
+                }
+            }
+
+            // Apply rules to inner membranes
+            foreach (Membrane innerMembrane in membrane.InnerMembranes)
+            {
+                this.EvolveMembrane(membrane: innerMembrane, depth:depth+1);
+            }
+            // Incorporate the products
+            //  - Membranes
+            foreach (Membrane incorporatingMembrane in totalProducedMembranes)
+            {
+                membrane.IncorporateMembrane(incorporatingMembrane);
+            }
+            //  - Multiset
+            membrane.UpdateMultiset(totalProducedMultiset);
+        }
+        if (depth == 0)
+        {
+            Debug.Log($"Before PSystem membrane {this.MembraneString}");
+            Debug.Log($"Length of the before string {this.MembraneString.Length}");
+            this.MembraneString = membrane.ToString();
+            Debug.Log($"After PSystem membrane {this.MembraneString}");
+            Debug.Log($"Length of the after string {this.MembraneString.Length}");
+        }
+    }
+
 }
