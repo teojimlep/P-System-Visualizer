@@ -11,8 +11,9 @@ public class SceneLoader : MonoBehaviour
         if (sceneName == "TreeScene")
         {
             List<PSystemRule> collectedRules = ruleCollector.GetRules();
-            RuleManager.Instance.SetRules(collectedRules); // Send rules to the singleton
-            Debug.Log("Rules sent to RuleManager");
+            RuleCollector.SelectedRules = collectedRules;
+            //RuleManager.Instance.SetRules(collectedRules); // Send rules to the singleton
+            //Debug.Log("Rules sent to RuleManager");
         }
         SceneManager.LoadScene(sceneName);
     }

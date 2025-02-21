@@ -79,12 +79,14 @@ public class PTree : MonoBehaviour
             {
                 (1f, "(E:1)(W:1)")
             };
-            PSystemRule ruleBS1 = new(reactiveMultiset: "(BS1:1)", possibleProductBS1);
-            PSystemRule ruleBS2 = new(reactiveMultiset: "(BS2:1)", possibleProductBS2);
-            PSystemRule ruleBL = new(reactiveMultiset: "(BL:1)", possibleProductBL);
-            PSystemRule ruleBR = new(reactiveMultiset: "(BR:1)", possibleProductBR);
-            PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL);
-            PSystemRule ruleE = new(reactiveMultiset: "(E:1)", possibleProductE);
+
+            List<char> exampleLabels = new() { '0' };
+            PSystemRule ruleBS1 = new(reactiveMultiset: "(BS1:1)", possibleProductBS1, exampleLabels);
+            PSystemRule ruleBS2 = new(reactiveMultiset: "(BS2:1)", possibleProductBS2, exampleLabels);
+            PSystemRule ruleBL = new(reactiveMultiset: "(BL:1)", possibleProductBL, exampleLabels);
+            PSystemRule ruleBR = new(reactiveMultiset: "(BR:1)", possibleProductBR, exampleLabels);
+            PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL, exampleLabels);
+            PSystemRule ruleE = new(reactiveMultiset: "(E:1)", possibleProductE, exampleLabels);
             rules = new() { ruleBS1, ruleBS2, ruleBL, ruleBR, ruleL, ruleE};
         }
         else if (Example == 2)
@@ -108,10 +110,12 @@ public class PTree : MonoBehaviour
             {
                 (1f, "(L:1)(W:1)(F:1)")
             };
-            PSystemRule ruleT = new(reactiveMultiset: "(T:1)", possibleProductT);
-            PSystemRule ruleB1 = new(reactiveMultiset: "(B1:1)", possibleProductB1);
-            PSystemRule ruleB2 = new(reactiveMultiset: "(B2:1)", possibleProductB2);
-            PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL);
+
+            List<char> exampleLabels = new() { '0' };
+            PSystemRule ruleT = new(reactiveMultiset: "(T:1)", possibleProductT, exampleLabels);
+            PSystemRule ruleB1 = new(reactiveMultiset: "(B1:1)", possibleProductB1, exampleLabels);
+            PSystemRule ruleB2 = new(reactiveMultiset: "(B2:1)", possibleProductB2, exampleLabels);
+            PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL, exampleLabels);
             rules = new() {ruleT, ruleB1, ruleB2, ruleL};
         }
         else if (Example == 3)
@@ -138,12 +142,14 @@ public class PTree : MonoBehaviour
             {
                 (1f, "(L:1)(W:1)(F:1)")
             };
-            PSystemRule ruleBp = new(reactiveMultiset: "(Bp:1)", possibleProductBp);
-            PSystemRule ruleBm = new(reactiveMultiset: "(Bm:1)", possibleProductBm);
-            PSystemRule ruleBpa = new(reactiveMultiset: "(Bp:1)", possibleProductBa);
-            PSystemRule ruleBa = new(reactiveMultiset: "(Ba:1)", possibleProductBa);
-            PSystemRule ruleBc = new(reactiveMultiset: "(Bc:1)", possibleProductBc);
-            PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL);
+
+            List<char> exampleLabels = new() { '0' };
+            PSystemRule ruleBp = new(reactiveMultiset: "(Bp:1)", possibleProductBp, exampleLabels);
+            PSystemRule ruleBm = new(reactiveMultiset: "(Bm:1)", possibleProductBm, exampleLabels);
+            PSystemRule ruleBpa = new(reactiveMultiset: "(Bp:1)", possibleProductBa, exampleLabels);
+            PSystemRule ruleBa = new(reactiveMultiset: "(Ba:1)", possibleProductBa, exampleLabels);
+            PSystemRule ruleBc = new(reactiveMultiset: "(Bc:1)", possibleProductBc, exampleLabels);
+            PSystemRule ruleL = new(reactiveMultiset: "(L:1)", possibleProductL, exampleLabels);
             rules = new() {ruleBp, ruleBm, ruleBa, ruleBc, ruleL, ruleBpa};
         }
         else if (Example == 4)
@@ -170,11 +176,13 @@ public class PTree : MonoBehaviour
             {
                 (1f, "(U:1)[(V:2)]")
             };
-            PSystemRule ruleA = new(reactiveMultiset: "(A:1)", possibleProductA);
-            PSystemRule ruleB = new(reactiveMultiset: "(B:1)", possibleProductB);
-            PSystemRule ruleC = new(reactiveMultiset: "(C:1)", possibleProductC);
-            PSystemRule ruleD = new(reactiveMultiset: "(D:1)", possibleProductD);
-            PSystemRule ruleE = new(reactiveMultiset: "(E:1)", possibleProductE);
+
+            List<char> exampleLabels = new() { '0' };
+            PSystemRule ruleA = new(reactiveMultiset: "(A:1)", possibleProductA, exampleLabels);
+            PSystemRule ruleB = new(reactiveMultiset: "(B:1)", possibleProductB, exampleLabels);
+            PSystemRule ruleC = new(reactiveMultiset: "(C:1)", possibleProductC, exampleLabels);
+            PSystemRule ruleD = new(reactiveMultiset: "(D:1)", possibleProductD, exampleLabels);
+            PSystemRule ruleE = new(reactiveMultiset: "(E:1)", possibleProductE, exampleLabels);
             rules = new() {ruleA, ruleB, ruleC, ruleD, ruleE};
         }
         return rules;
@@ -182,7 +190,8 @@ public class PTree : MonoBehaviour
     
     public void InitTreeMembrane()
     {
-        List<PSystemRule> rules =  this.GetRules();
+        //List<PSystemRule> rules =  this.GetRules();
+        List<PSystemRule> rules = RuleCollector.SelectedRules;
         this.TreePSystem = new(membraneString:this.InputEasyMembrane.text, rules: rules);
     }
 

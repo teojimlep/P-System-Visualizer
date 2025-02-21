@@ -274,15 +274,17 @@ public class PSystemRule
 {
     // Multiset required to apply the rule
     public string ReactiveMultiset;
+    public List<char> MembraneLabels;
     // List of PossibleProducts (multiset + membranes and their probabilities)
     // associated with this ReactiveMultiset
     public List<(float Probability, string Product)> PossibleProducts;
 
     // Constructor for initialization
-    public PSystemRule(string reactiveMultiset, List<(float Probability, string Product)> possibleProducts)
+    public PSystemRule(string reactiveMultiset, List<(float Probability, string Product)> possibleProducts, List<char> membraneLabels)
     {
         ReactiveMultiset = reactiveMultiset;
         PossibleProducts = possibleProducts;
+        MembraneLabels = membraneLabels;
     }
 
     // Choose with weighted randomness a given number of PSystemProducts
@@ -317,10 +319,12 @@ public class PSystemRule
     }
 
     // Check is this rule can be applied to a multiset
-    public bool CanBeAppliedTo(Multiset multiset)
+    public bool CanBeAppliedTo(Membrane membrane)
     {
         Multiset builtReactiveMultiset = new(easyMultiset: this.ReactiveMultiset);
-        return multiset.CanCombineWith(builtReactiveMultiset.GetInverse());
+        bool multisetCompatibility = membrane.Multiset.CanCombineWith(builtReactiveMultiset.GetInverse());
+        bool labelCompatibility = this.MembraneLabels.Contains(membrane.Label);
+        return multisetCompatibility && labelCompatibility;
     }
 
     // Copy method
@@ -329,7 +333,8 @@ public class PSystemRule
         // Create a deep copy of the object
         return new PSystemRule(
             this.ReactiveMultiset, // Safe to copy directly (immutable string)
-            new List<(float Probability, string Product)>(this.PossibleProducts) // Copy the list
+            new List<(float Probability, string Product)>(this.PossibleProducts), // Copy the list
+            this.MembraneLabels
         );
     }
 }
@@ -512,7 +517,7 @@ public class Membrane
     {
         foreach (PSystemRule rule in possibleRules)
         {
-            if (rule.CanBeAppliedTo(this.Multiset))
+            if (rule.CanBeAppliedTo(this))
             {
                 return true;
             }
@@ -582,7 +587,7 @@ public class PSystem
             List<PSystemRule> usableRules = new();
             foreach (PSystemRule ruleToCopy in this.Rules)
             {
-                if (ruleToCopy.CanBeAppliedTo(membrane.Multiset))
+                if (ruleToCopy.CanBeAppliedTo(membrane))
                 {
                     usableRules.Add(ruleToCopy.Copy());
                 }
@@ -596,7 +601,7 @@ public class PSystem
             
             foreach (int i in ruleIndices)
             {
-                while (usableRules[i].CanBeAppliedTo(membrane.Multiset))
+                while (usableRules[i].CanBeAppliedTo(membrane))
                 {
                     // Get specific rule to use
                     PSystemRule usingRule = usableRules[i];
@@ -636,10 +641,8 @@ public class PSystem
         if (depth == 0)
         {
             Debug.Log($"Before PSystem membrane {this.MembraneString}");
-            Debug.Log($"Length of the before string {this.MembraneString.Length}");
             this.MembraneString = membrane.ToString();
             Debug.Log($"After PSystem membrane {this.MembraneString}");
-            Debug.Log($"Length of the after string {this.MembraneString.Length}");
         }
     }
 
