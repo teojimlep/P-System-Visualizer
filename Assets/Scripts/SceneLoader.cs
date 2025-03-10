@@ -14,7 +14,9 @@ public class SceneLoader : MonoBehaviour
             RuleCollector.SelectedRules = collectedRules;
             //RuleManager.Instance.SetRules(collectedRules); // Send rules to the singleton
             //Debug.Log("Rules sent to RuleManager");
+            JSONWriter.SaveRules(RuleCollector.SelectedRules,"Assets/rules.json");
         }
+        
         SceneManager.LoadScene(sceneName);
     }
 

@@ -268,6 +268,17 @@ public class PSystemProduct
         ProductMembranes = new();
         PSystemBuilder.BuildProduct(builtProduct: this, easyProduct: easyProduct);
     }
+
+    public override string ToString()
+    {
+        List<string> items = new List<string>();
+        items.Add(ProductMultiset.ToString());
+        foreach (Membrane productMembrane in ProductMembranes)
+        {
+            items.Add(productMembrane.ToString());
+        }
+        return $"{string.Join("", items)}";
+    } 
 }
 
 public class PSystemRule
@@ -302,7 +313,7 @@ public class PSystemRule
         // Check if the sum of the probabilities equals 1
         if (totalProbability != 1f)
         {
-            throw new ArgumentException("The total probability must be 1.");
+            throw new ArgumentException($"The total probability must be 1. Total probability: {totalProbability}");
         }
         // Generate random float number fom 0 to 1
         float randomPoint = UnityEngine.Random.Range(0f, totalProbability);
@@ -322,9 +333,9 @@ public class PSystemRule
     public bool CanBeAppliedTo(Membrane membrane)
     {
         Multiset builtReactiveMultiset = new(easyMultiset: this.ReactiveMultiset);
-        bool multisetCompatibility = membrane.Multiset.CanCombineWith(builtReactiveMultiset.GetInverse());
-        bool labelCompatibility = this.MembraneLabels.Contains(membrane.Label);
-        return multisetCompatibility && labelCompatibility;
+        //bool multisetCompatibility = membrane.Multiset.CanCombineWith(builtReactiveMultiset.GetInverse());
+        //bool labelCompatibility = this.MembraneLabels.Contains(membrane.Label);
+        return membrane.Multiset.CanCombineWith(builtReactiveMultiset.GetInverse()) && this.MembraneLabels.Contains(membrane.Label);
     }
 
     // Copy method
@@ -336,6 +347,18 @@ public class PSystemRule
             new List<(float Probability, string Product)>(this.PossibleProducts), // Copy the list
             this.MembraneLabels
         );
+    }
+
+    public override string ToString()
+    {
+        List<string> items = new List<string>();
+        foreach ((float probability, string product) in this.PossibleProducts)
+        {
+            items.Add(product.ToString());
+            items.Add(" : ");
+            items.Add(probability.ToString());
+        }
+        return $"{string.Join("", items)}";
     }
 }
 

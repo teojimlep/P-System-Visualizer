@@ -5,61 +5,120 @@ using TMPro;
 
 public class RuleSetter : MonoBehaviour
 {
-    public float verticalPadding = 50f;
+    public float verticalPadding = 10f;
+    public GameObject RuleSetterPrefab;
+    public GameObject RulesObject = null;
 
-    // Method to replicate the entire object
-    public void Replicate()
+    public void Update()
     {
-        // Create a copy of this object
-        GameObject replicatedObject = Instantiate(gameObject);
+        if (this.name == "Rules")
+        {
+            AdjustRuleSetterPositions(this.RulesObject);
+        }
+    }
+    public void AddNewRule()
+    {
+        // Contar cuántos RuleSetter existen
+        Transform rulesContainer = GameObject.Find("Rules").transform;
+        int ruleIndex = rulesContainer.childCount;
+        string newRuleName = $"RuleSetter_{ruleIndex+1}";
 
-        // Adjust the position of the replicated object
-        Vector3 currentPosition = transform.position;
-        replicatedObject.transform.position = new Vector3(
-            currentPosition.x,
-            currentPosition.y - verticalPadding,
-            currentPosition.z
-        );
+        // Calcular la nueva posición
+        Vector3 newPosition = Vector3.zero;
+        if (ruleIndex > 0)
+        {
+            Transform lastRule = rulesContainer.GetChild(ruleIndex - 1);
+            Transform panel = lastRule.Find("Panel");
 
-        // Make the replicated object a sibling (or child, if necessary)
-        replicatedObject.transform.SetParent(transform.parent);
+            if (panel != null)
+            {
+                float panelHeight = panel.GetComponent<RectTransform>().rect.height;
+                newPosition = lastRule.position - new Vector3(0, panelHeight + verticalPadding, 0);
+            }
+        }
 
-        // Optional: Clear "Clone" suffix from the name
-        string[] nameParts = gameObject.name.Split('_');
-        replicatedObject.name = $"{string.Join("_", nameParts, 0, nameParts.Length - 1)}_{int.Parse(nameParts[^1]) + 1}";
-
-        //replicatedObject.name = gameObject.name;
-
-        replicatedObject.transform.Find("MulPredecessor").GetComponentInChildren<TMP_InputField>().text = "";
-        replicatedObject.transform.Find("MulPredecessor").GetComponentInChildren<TMP_InputField>().placeholder.GetComponent<TMP_Text>().text = "Reactives";
-        replicatedObject.transform.Find("MulSuccessor").GetComponentInChildren<TMP_InputField>().text = "";
-        replicatedObject.transform.Find("MulSuccessor").GetComponentInChildren<TMP_InputField>().placeholder.GetComponent<TMP_Text>().text = "Products";
+        // Instanciar el nuevo RuleSetter
+        GameObject newRule = Instantiate(RuleSetterPrefab, newPosition, Quaternion.identity, rulesContainer);
+        newRule.name = newRuleName;
 
         // Change the create button to destroy button
-        DeleteChildByName("AddNewRule");
+        DeleteChildByPath($"RuleSetter_{ruleIndex}/AddNewRule");
 
-        // Increase the Rules height to make it responsive
-        RectTransform parentRectTransform = transform.parent.GetComponent<RectTransform>();
-        Vector2 currentRulesPosition = parentRectTransform.anchoredPosition;
-        parentRectTransform.sizeDelta += new Vector2(0, +verticalPadding);
-        parentRectTransform.anchoredPosition = currentRulesPosition;
+        // Get the $"RuleSetter_{ruleIndex+1}/AddNewRule" object. Point to the AddNewRule method in the object Rules (to set up the button)
+        Transform newAddButton = newRule.transform.Find("AddNewRule");
+        if (newAddButton != null)
+        {
+            // Encontrar el objeto Rules en la escena
+            GameObject rulesObject = GameObject.Find("Rules");
+            if (rulesObject != null)
+            {
+                // Obtener el componente que contiene el método AddNewRule (en este caso, el script RuleSetter)
+                RuleSetter ruleSetterScript = rulesObject.GetComponent<RuleSetter>();
+                if (ruleSetterScript != null)
+                {
+                    // Eliminar todos los listeners previos
+                    newAddButton.GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
+
+                    // Asignar el método AddNewRule del objeto Rules al evento del botón
+                    newAddButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ruleSetterScript.AddNewRule);
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró el componente RuleSetter en el objeto Rules.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró el objeto 'Rules' en la escena.");
+            }
+        }
+        // Ajustar el tamaño del contenedor Rules
+        //AdjustRuleSetterPositions(this.RulesObject);
     }
 
+    private void AdjustRuleSetterPositions(GameObject rulesObject)
+    {
+        // Take every child of RulesObject (They are RuleSetter_i) (do not take grand children, only immediate)
+        // Position RuleSetter_1 at the top of the Rules container
+        // Postition RuleSetter_2 just below (plus padding) - To do this, take into account the height of the panel object in RuleSetter_i-1
+        // Go on for all children
+        Transform rulesTransform = rulesObject.transform;
+        float currentY = 257f;  // Start positioning from the top
+        foreach (Transform ruleSetter in rulesTransform)
+        {
+            if (ruleSetter.parent == rulesTransform && ruleSetter.name!="DeletingRuleSetter")
+            {
+                RectTransform panel = ruleSetter.Find("Panel")?.GetComponent<RectTransform>();
+
+                if (panel != null)
+                {
+                    // Move RuleSetter to the correct position
+                    ruleSetter.localPosition = new Vector3(ruleSetter.localPosition.x, -currentY, 0);
+
+                    // Update Y position for the next RuleSetter
+                    currentY += panel.rect.height + verticalPadding;
+                }
+            }
+        }
+        // Adjust the container height to fit all rule setters
+        RectTransform containerRect = rulesObject.GetComponent<RectTransform>();
+        if (containerRect != null)
+        {
+            containerRect.sizeDelta = new Vector2(containerRect.sizeDelta.x, currentY);
+        }
+    }
     public void Delete()
     {
         // Get the index of the deleted object
         string[] nameParts = gameObject.name.Split('_');
         int deletedIndex = int.Parse(nameParts[^1]);
-        Debug.Log($"{deletedIndex}");
 
         // Get all sibling objects with the same naming convention
         Transform parentTransform = transform.parent;
         var allObjects = parentTransform.GetComponentsInChildren<Transform>(false);
-        Debug.Log(parentTransform.name);
         // Iterate through all objects and decrement names of those with higher numbers
         foreach (var obj in allObjects)
         {
-            Debug.Log(obj.name);
             if (obj.parent == parentTransform)
             {
                 string[] objNameParts = obj.name.Split('_');
@@ -67,36 +126,27 @@ public class RuleSetter : MonoBehaviour
                 if (currentIndex > deletedIndex)
                 {
                     obj.name = $"RuleSetter_{currentIndex - 1}";
-                    Vector3 currentPosition = obj.transform.position;
-                    obj.transform.position = new Vector3(
-                        currentPosition.x,
-                        currentPosition.y + verticalPadding,
-                        currentPosition.z
-                    );
                 }
             }
         }
-
-        // Reduce the Rules height to make it responsive
-        RectTransform parentRectTransform = transform.parent.GetComponent<RectTransform>();
-        Vector2 currentRulesPosition = parentRectTransform.anchoredPosition;
-        parentRectTransform.sizeDelta += new Vector2(0, -verticalPadding);
-        parentRectTransform.anchoredPosition = currentRulesPosition;
-
+        gameObject.name = "DeletingRuleSetter";
+        // Ajustar el tamaño del contenedor Rules
+        //AdjustRuleSetterPositions(parentTransform.gameObject);
         // Destroy the object
         Destroy(gameObject);
     }
 
-    public void DeleteChildByName(string childName)
+    public void DeleteChildByPath(string path)
     {
-        Transform child = transform.Find(childName);
+        Transform child = transform.Find(path);
         if (child != null)
         {
             Destroy(child.gameObject);
         }
         else
         {
-            Debug.LogWarning($"Child with name {childName} not found.");
+            Debug.LogWarning($"Child with path '{path}' not found.");
         }
     }
+
 }

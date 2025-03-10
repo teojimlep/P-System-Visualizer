@@ -1,0 +1,28 @@
+{
+    "Rules": [
+        {
+            "Predecessor": "(a:1)",
+            "TargetLabels": "0,3",
+            "Products": [
+                {
+                    "Successor": "(u:1)[(v:1)]",
+                    "Probability": 0.4000000059604645
+                },
+                {
+                    "Successor": "(z:4)(g:5)",
+                    "Probability": 0.6000000238418579
+                }
+            ]
+        },
+        {
+            "Predecessor": "(b:1)",
+            "TargetLabels": "5,2",
+            "Products": [
+                {
+                    "Successor": "[][]",
+                    "Probability": 1.0
+                }
+            ]
+        }
+    ]
+}
