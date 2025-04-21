@@ -5,12 +5,8 @@
             "TargetLabels": "0",
             "Products": [
                 {
-                    "Successor": "[(A:100)(L:1)(E:1)(B:2)]",
-                    "Probability": 0.5
-                },
-                {
-                    "Successor": "[(A:100)(L:1)(E:1)(B:6)]",
-                    "Probability": 0.5
+                    "Successor": "[(A:100)(L:1)(E:1)(B:3)]",
+                    "Probability": 1.0
                 }
             ]
         },

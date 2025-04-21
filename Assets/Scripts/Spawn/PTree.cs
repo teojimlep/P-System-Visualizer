@@ -5,6 +5,8 @@ using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine.Subsystems;
 using System.Globalization;
+using System.Diagnostics;
+using System.IO;
 
 
 public class PTree : MonoBehaviour
@@ -13,6 +15,7 @@ public class PTree : MonoBehaviour
     public TMP_InputField InputEasyMembrane;
     public TMP_InputField NumIterations;
     public TMP_InputField Angle;
+    public TMP_InputField Seed;
     public GameObject PVisualizerPrefab;
     //public string EasyMembrane;
 
@@ -34,7 +37,8 @@ public class PTree : MonoBehaviour
         examples.Add(3, "[(L:1)(Bp:1)(Bm:1)(Ba:1)(Bc:1)]");
         examples.Add(4, "[(A:1)(B:1)(C:1)(D:1)(E:1)]");
 
-        InputEasyMembrane.text = examples[Example];
+        //InputEasyMembrane.text = examples[Example];
+        InputEasyMembrane.text = "[(L:1)(E:1)(F:1)(W:1)(B:4)]";
     }
 
     public List<PSystemRule> GetRules()
@@ -196,15 +200,53 @@ public class PTree : MonoBehaviour
         //List<PSystemRule> rules =  this.GetRules();
         List<PSystemRule> rules = RuleCollector.SelectedRules;
         this.TreePSystem = new(membraneString:this.InputEasyMembrane.text, rules: rules);
+        
+        // Set random seed
+        string seedText = this.Seed.text;
+        if (int.TryParse(seedText, out int seed))
+        {
+            UnityEngine.Debug.Log($"Seed set to: {seed}");
+        }
+        else
+        {
+            seed = System.Environment.TickCount; // or use DateTime.Now.Millisecond, etc.
+            seed = Mathf.Abs(seed % 10000);
+            UnityEngine.Debug.Log($"No valid seed entered — using generated seed: {seed}");
+        }
+        UnityEngine.Random.InitState(seed);
+        
     }
 
     public void EvolveAndSpawn()
     {
+        TimerSummary timer = new();
+        timer.StartTimer("Evolve and Spawn");
+
+        timer.StartTimer("Init");
         this.InitTreeMembrane();
+        timer.StopTimer("Init");
+        
+        timer.StartTimer("Evolve");
         this.TreePSystem.EvolveMembrane(nIterations: int.Parse(this.NumIterations.text));
+        timer.StopTimer("Evolve");
+
+        timer.StartTimer("Build");
         Vector3 spawnPosition = new(0f,-4f,0f);
         this.TreeMembrane = new(easyMembrane: TreePSystem.MembraneString);
+        timer.StopTimer("Build");
+
+        timer.StartTimer("Spawn");
         this.SpawnTree(treeMembrane: this.TreeMembrane, spawnPosition: spawnPosition);
+        timer.StopTimer("Spawn");
+        
+        timer.StopTimer("Evolve and Spawn");
+
+        // Save the timer summary to a file
+        string filePath = $"timer_summary_{NumIterations.text}_iterations.txt";  // You can modify the path and filename as needed
+        File.WriteAllText(filePath, timer.GetSummary());  // Save summary to the file
+
+        // Optionally, print a message in the console
+        UnityEngine.Debug.Log("Timer summary saved to: " + filePath);
     }
 
     public void GrowNaturally()
@@ -236,10 +278,10 @@ public class PTree : MonoBehaviour
         TurtleOrientation initOrientation = new(Vector3.up, Vector3.left, Vector3.forward);
         PVisualizer.Turtle = new Turtle(spawnPosition, initOrientation);
         PVisualizer.Angle = float.Parse(this.Angle.text, CultureInfo.InvariantCulture);
-        Debug.Log($"Ángulo registrado {PVisualizer.Angle}");
+        UnityEngine.Debug.Log($"Ángulo registrado {PVisualizer.Angle}");
         // Draw the membrane
         //Debug.Log($"Drawing membrane: {treeMembrane.ToString()}");
-        PVisualizer.DrawMembrane(drawnMembrane: treeMembrane, parentObject:this.PVisualizerObject);
+        PVisualizer.DrawMembrane(drawnMembrane: treeMembrane);
         //PVisualizer.Turtle.ExploredSpace.DrawBoundingBox();
         // Once the tree has been completely generated, it can rotate if desired
         this.CanRotate = true;
@@ -269,3 +311,64 @@ public class PTree : MonoBehaviour
         }
     }
 }
+
+public class TimerSummary : MonoBehaviour
+{
+    private Dictionary<string, Stopwatch> timers = new Dictionary<string, Stopwatch>();
+    private Dictionary<string, long> totalTimes = new Dictionary<string, long>();
+    private Dictionary<string, int> callCounts = new Dictionary<string, int>();
+
+    public void StartTimer(string label)
+    {
+        if (!timers.ContainsKey(label))
+            timers[label] = new Stopwatch();
+
+        timers[label].Restart();
+    }
+
+    public void StopTimer(string label)
+    {
+        if (timers.ContainsKey(label))
+        {
+            timers[label].Stop();
+            long elapsed = timers[label].ElapsedMilliseconds;
+
+            if (!totalTimes.ContainsKey(label))
+                totalTimes[label] = 0;
+            totalTimes[label] += elapsed;
+
+            if (!callCounts.ContainsKey(label))
+                callCounts[label] = 0;
+            callCounts[label]++;
+        }
+    }
+
+    public void PrintSummary()
+    {
+        UnityEngine.Debug.Log("=== Timer Summary ===");
+        foreach (var kvp in totalTimes)
+        {
+            string label = kvp.Key;
+            long total = kvp.Value;
+            int count = callCounts[label];
+            float avg = (float)total / count;
+            UnityEngine.Debug.Log($"{label}: Total = {total} ms, Calls = {count}, Avg = {avg:F2} ms");
+        }
+    }
+
+    public string GetSummary()
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        sb.AppendLine("=== Timer Summary ===");
+        foreach (var kvp in totalTimes)
+        {
+            string label = kvp.Key;
+            long total = kvp.Value;
+            int count = callCounts[label];
+            float avg = (float)total / count;
+            sb.AppendLine($"{label}: Total = {total} ms, Calls = {count}, Avg = {avg:F2} ms");
+        }
+        return sb.ToString();
+    }
+}
+

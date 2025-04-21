@@ -220,7 +220,6 @@ public class PSystemBuilder
     public static void BuildMembrane(Membrane builtMembrane, string easyMembrane)
     {
         var (label, multisetEntries, easyInnerMembranes) = PSystemBuilder.GetMembraneContent(easyMembrane);
-        Console.WriteLine($"Label: {label}");
         // Append multisetEntries, which are strings, into a single string
         string easyMultiset = string.Join("", multisetEntries);
         Multiset multiset = new(easyMultiset: easyMultiset);
@@ -626,8 +625,7 @@ public class PSystem
             //  - Maximally: Apply rules randomly until none of them can be used due to lack of needed reactives
             //  - Paralelly: Save products (multisets and membranes) to incorporate them later 
             List<int> ruleIndices = Enumerable.Range(0, usableRules.Count).ToList();
-            System.Random rng = new System.Random();
-            ruleIndices = ruleIndices.OrderBy(x => rng.Next()).ToList();
+            ruleIndices = ruleIndices.OrderBy(x => UnityEngine.Random.Range(int.MinValue, int.MaxValue)).ToList();
             
             foreach (int i in ruleIndices)
             {

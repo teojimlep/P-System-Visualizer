@@ -15,7 +15,7 @@ public class PSystemVisualizer : MonoBehaviour
     public Turtle _turtle;
     public Turtle Turtle{get{return this._turtle;}set{this._turtle=value;}}
 
-    public GameObject CreateBranch(Vector3 startPos, Vector3 endPos, float branchRadius, string name, GameObject parentObject)
+    public void CreateBranch(Vector3 startPos, Vector3 endPos, float branchRadius, string name)
     {
         float length = Vector3.Distance(startPos, endPos);
         if (length > 0f)
@@ -39,14 +39,10 @@ public class PSystemVisualizer : MonoBehaviour
             //}
             // Renaming that could be more suitable if related to the hierarchy of the corresponding membrane
             createdBranch.name = name;
-            
-            return createdBranch;
         }
-
-        return null;
     }
 
-    public void DrawMembrane(Membrane drawnMembrane, GameObject parentObject)
+    public void DrawMembrane(Membrane drawnMembrane)
     {
         // Counting the number of W's and F's to determine the width and length of the created branch
         float branchRadius = (1 + Mathf.Log(drawnMembrane.Multiset["W"])) * this.BranchUnitRadius;
@@ -68,13 +64,13 @@ public class PSystemVisualizer : MonoBehaviour
         string name = "Branch" + drawnMembrane.GetHierarchy();
 
         // Creation of the branch after the turtle operations:
-        GameObject createdBranch = this.CreateBranch(startPos, _turtle.State.Position, branchRadius, name, parentObject);
+        this.CreateBranch(startPos, _turtle.State.Position, branchRadius, name);
 
         // Iterate over the inner membranes repeating this process recursively
         foreach (Membrane innerMembrane in drawnMembrane.InnerMembranes)
         {        
             _turtle.PushState(); // Saving current state
-            this.DrawMembrane(innerMembrane, createdBranch); // Draw inner membrane
+            this.DrawMembrane(innerMembrane); // Draw inner membrane
             _turtle.PopState(); // Going back to previous state
         }
     }

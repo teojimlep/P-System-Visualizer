@@ -1,0 +1,6 @@
+=== Timer Summary ===
+Init: Total = 0 ms, Calls = 1, Avg = 0,00 ms
+Evolve: Total = 636 ms, Calls = 1, Avg = 636,00 ms
+Build: Total = 90 ms, Calls = 1, Avg = 90,00 ms
+Spawn: Total = 4 ms, Calls = 1, Avg = 4,00 ms
+Evolve and Spawn: Total = 731 ms, Calls = 1, Avg = 731,00 ms
