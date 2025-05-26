@@ -55,9 +55,9 @@ public class PSystemVisualizer : MonoBehaviour
         // Turtle operations:
         Vector3 startPos = _turtle.State.Position; // Store initial position
         // Turtle rotates, advances and pushes its state into its stack
-        _turtle.Rotate(upRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.up); // Rotate first
-        _turtle.Rotate(leftRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.left); // Rotate first
-        _turtle.Rotate(headRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.head); // Rotate first
+        _turtle.Rotate(headRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.head); // Roll
+        _turtle.Rotate(leftRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.left); // Pitch
+        _turtle.Rotate(upRotationAngleMultiplier*this.Angle, _turtle.State.Orientation.up); // Yaw
         _turtle.Forward(branchLength); // Once rotated, the turtle can advance the desired distance
 
         // Name of the branch
