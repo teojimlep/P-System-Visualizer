@@ -1,0 +1,28 @@
+{
+    "Axiom": "[(G:1)(B:2)]",
+    "HeadAngle": "90",
+    "LeftAngle": "22.5",
+    "UpAngle": "22.5",
+    "Rules": [
+        {
+            "Predecessor": "(G:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "(G:1)(F:1)(W:1)",
+                    "Probability": "1.000"
+                }
+            ]
+        },
+        {
+            "Predecessor": "(B:2)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "[(+:1)(G:1)(B:2)][(>:1)(+:1)(G:1)(B:2)]",
+                    "Probability": "1.000"
+                }
+            ]
+        }
+    ]
+}

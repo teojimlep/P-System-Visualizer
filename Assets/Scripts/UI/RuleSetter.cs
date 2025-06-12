@@ -45,8 +45,8 @@ public class RuleSetter : MonoBehaviour
         GameObject newRule = Instantiate(RuleSetterPrefab, newPosition, Quaternion.identity, rulesContainer);
         newRule.name = newRuleName;
 
-        // Change the create button to destroy button
-        DeleteChildByPath($"RuleSetter_{ruleIndex}/AddNewRule");
+        // Disable the AddNewRule button
+        ToggleChildByPath($"RuleSetter_{ruleIndex}/AddNewRule");
 
         // Get the $"RuleSetter_{ruleIndex+1}/AddNewRule" object. Point to the AddNewRule method in the object Rules (to set up the button)
         Transform newAddButton = newRule.transform.Find("AddNewRule");
@@ -116,28 +116,80 @@ public class RuleSetter : MonoBehaviour
         // Get the index of the deleted object
         string[] nameParts = gameObject.name.Split('_');
         int deletedIndex = int.Parse(nameParts[^1]);
-
         // Get all sibling objects with the same naming convention
         Transform parentTransform = transform.parent;
         var allObjects = parentTransform.GetComponentsInChildren<Transform>(false);
-        // Iterate through all objects and decrement names of those with higher numbers
+        // Get the number of rule setters
+        int nRuleSetters = 0;
         foreach (var obj in allObjects)
         {
             if (obj.parent == parentTransform)
             {
-                string[] objNameParts = obj.name.Split('_');
-                int currentIndex = int.Parse(objNameParts[^1]);
-                if (currentIndex > deletedIndex)
-                {
-                    obj.name = $"RuleSetter_{currentIndex - 1}";
-                }
+                nRuleSetters++;
             }
         }
-        gameObject.name = "DeletingRuleSetter";
-        // Ajustar el tamaño del contenedor Rules
-        //AdjustRuleSetterPositions(parentTransform.gameObject);
-        // Destroy the object
-        Destroy(gameObject);
+        if (nRuleSetters != 1)
+        {
+            // Iterate through all objects and decrement names of those with higher numbers
+            foreach (var obj in allObjects)
+            {
+                if (obj.parent == parentTransform)
+                {
+                    string[] objNameParts = obj.name.Split('_');
+                    int currentIndex = int.Parse(objNameParts[^1]);
+                    if (currentIndex > deletedIndex)
+                    {
+                        obj.name = $"RuleSetter_{currentIndex - 1}";
+                    }
+                }
+            }
+            gameObject.name = "DeletingRuleSetter";
+            // Ajustar el tamaño del contenedor Rules
+            //AdjustRuleSetterPositions(parentTransform.gameObject);
+            // Destroy the object
+            Destroy(gameObject);
+            if (nRuleSetters == deletedIndex)
+            {
+                Debug.Log($"Entrado en el toggle: RuleSetter_{nRuleSetters - 1}/AddNewRule");
+                //ToggleChildByPath($"./RuleSetter_{nRuleSetters-1}/AddNewRule");
+                string rootName = transform.parent.name;
+                string path = $"{rootName}/RuleSetter_{nRuleSetters - 1}/AddNewRule";
+                Debug.Log(path);
+                ToggleChildByPath(path, absPath: true);
+            }
+        }
+    }
+    public void ToggleChildByPath(string path, bool absPath = false)
+    {
+        Transform child;
+        if (absPath)
+        {
+            // Absolute path: start from the root GameObject
+            GameObject root = GameObject.Find(path.Split('/')[0]);
+            if (root == null)
+            {
+                Debug.LogWarning($"Root object '{path.Split('/')[0]}' not found.");
+                return;
+            }
+
+            string subPath = path.Contains("/") ? path.Substring(path.IndexOf('/') + 1) : "";
+            child = string.IsNullOrEmpty(subPath) ? root.transform : root.transform.Find(subPath);
+        }
+        else
+        {
+            child = transform.Find(path);
+        }
+        Debug.Log($"Toggling game transform {child}");
+        if (child != null)
+        {
+            bool currentState = child.gameObject.activeSelf;
+            Debug.Log($"Toggling game object {child.gameObject}");
+            child.gameObject.SetActive(!currentState); // Toggle the state
+        }
+        else
+        {
+            Debug.LogWarning($"Child with path '{path}' not found.");
+        }
     }
 
     public void DeleteChildByPath(string path)

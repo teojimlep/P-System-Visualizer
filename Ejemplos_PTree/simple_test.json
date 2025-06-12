@@ -1,0 +1,18 @@
+{
+    "Axiom": "[(a:1)]",
+    "HeadAngle": "1",
+    "LeftAngle": "1",
+    "UpAngle": "1",
+    "Rules": [
+        {
+            "Predecessor": "(a:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "(c:3)",
+                    "Probability": "1.000"
+                }
+            ]
+        }
+    ]
+}

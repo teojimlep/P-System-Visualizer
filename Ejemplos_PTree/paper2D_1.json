@@ -1,0 +1,68 @@
+{
+    "Axiom": "[(L:1)(E:1)(W:1)(BL:1)(BS1:1)]",
+    "HeadAngle": "22.5",
+    "LeftAngle": "22.5",
+    "UpAngle": "22.5",
+    "Rules": [
+        {
+            "Predecessor": "(BS1:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "[(L:1)(E:1)(W:1)(F:1)(BS2:1)(BR:1)]",
+                    "Probability": "1.000"
+                }
+            ]
+        },
+        {
+            "Predecessor": "(BS2:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "[(L:1)(E:1)(W:1)(F:1)(BS1:1)(BL:1)]",
+                    "Probability": "1.000"
+                }
+            ]
+        },
+        {
+            "Predecessor": "(BL:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "[(+:1)(L:1)(E:1)(F:1)(W:1)(BS1:1)(BL:1)]",
+                    "Probability": "1.000"
+                }
+            ]
+        },
+        {
+            "Predecessor": "(BR:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "[(-:1)(L:1)(E:1)(F:1)(W:1)(BS1:1)(BL:1)]",
+                    "Probability": "1.000"
+                }
+            ]
+        },
+        {
+            "Predecessor": "(L:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "(L:1)(F:1)",
+                    "Probability": "1.000"
+                }
+            ]
+        },
+        {
+            "Predecessor": "(E:1)",
+            "TargetLabels": "0",
+            "Products": [
+                {
+                    "Successor": "(E:1)(W:1)",
+                    "Probability": "1.000"
+                }
+            ]
+        }
+    ]
+}

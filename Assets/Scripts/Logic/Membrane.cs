@@ -585,29 +585,22 @@ public class Membrane
 public class PSystem
 {
     public string MembraneString;
+    public Membrane SystemMembrane;
     public List<PSystemRule> Rules;
     
     public PSystem(string membraneString, List<PSystemRule> rules)
     {
         this.MembraneString = membraneString;
+        this.SystemMembrane = new(easyMembrane: membraneString);
         this.Rules = rules;
-    }
-
-    public Membrane GetMembrane(string membraneString)
-    {
-        if (membraneString == null)
-        {
-            membraneString = this.MembraneString;
-        }
-        Membrane membrane = new(easyMembrane:membraneString);        
-        return membrane;
     }
 
     public void EvolveMembrane(Membrane membrane = null, int nIterations = 1, int depth = 0)
     {
         if (membrane == null)
         {
-            membrane = this.GetMembrane(this.MembraneString);
+            //membrane = this.GetMembrane(this.MembraneString);
+            membrane = this.SystemMembrane;
         }
         for (int iter = 0; iter < nIterations; iter++)
         {
@@ -668,9 +661,7 @@ public class PSystem
         }
         if (depth == 0)
         {
-            Debug.Log($"Before PSystem membrane {this.MembraneString}");
             this.MembraneString = membrane.ToString();
-            Debug.Log($"After PSystem membrane {this.MembraneString}");
         }
     }
 

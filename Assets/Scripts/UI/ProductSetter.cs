@@ -40,7 +40,7 @@ public class ProductSetter : MonoBehaviour
         newProduct.transform.localPosition = newPosition;
 
         // Delete replicate button
-        DeleteChildByPath($"AddNewProduct");
+        ToggleChildByPath($"AddNewProduct");
 
         float shift = Mathf.Abs(GetComponent<RectTransform>().rect.height + verticalPadding);
         ExpandPanelDownwards(panelProducts, shift);
@@ -62,26 +62,76 @@ public class ProductSetter : MonoBehaviour
                 savedPositions.Add(obj.name, obj.transform.position);
             }
         }
-        foreach (var obj in allObjects)
+        if (savedPositions.Count > 1)
         {
-            if (obj.parent == parentTransform && obj.name != "PanelProducts")
+            foreach (var obj in allObjects)
             {
-                string[] objNameParts = obj.name.Split('_');
-                int currentIndex = int.Parse(objNameParts[^1]);
-                if (currentIndex > deletedIndex)
+                if (obj.parent == parentTransform && obj.name != "PanelProducts")
                 {
-                    Vector3 targetPos = savedPositions[$"Product_{currentIndex-1}"];
-                    obj.name = $"Product_{currentIndex - 1}";
-                    obj.transform.position = targetPos;
+                    string[] objNameParts = obj.name.Split('_');
+                    int currentIndex = int.Parse(objNameParts[^1]);
+                    if (currentIndex > deletedIndex)
+                    {
+                        Vector3 targetPos = savedPositions[$"Product_{currentIndex - 1}"];
+                        obj.name = $"Product_{currentIndex - 1}";
+                        obj.transform.position = targetPos;
+                    }
                 }
             }
+
+            Destroy(gameObject);
+
+            float shift = Mathf.Abs(GetComponent<RectTransform>().rect.height + verticalPadding);
+            ExpandPanelDownwards(panelProducts,-shift);
+            ExpandPanelDownwards(panelRules,-shift);
+        
+            if (deletedIndex == savedPositions.Count)
+            {
+                string absPathofParent = GetFullPath(transform.parent.parent);
+                Debug.Log(absPathofParent);
+                string path = $"{absPathofParent}/Products/Product_{deletedIndex - 1}/AddNewProduct";
+                ToggleChildByPath(path, absPath: true);
+            }
         }
+    }
+    string GetFullPath(Transform t)
+    {
+        if (t.parent == null)
+            return t.name;
+        return GetFullPath(t.parent) + "/" + t.name;
+    }
 
-        Destroy(gameObject);
+    public void ToggleChildByPath(string path, bool absPath = false)
+    {
+        Transform child;
+        if (absPath)
+        {
+            // Absolute path: start from the root GameObject
+            GameObject root = GameObject.Find(path.Split('/')[0]);
+            if (root == null)
+            {
+                Debug.LogWarning($"Root object '{path.Split('/')[0]}' not found.");
+                return;
+            }
 
-        float shift = Mathf.Abs(GetComponent<RectTransform>().rect.height + verticalPadding);
-        ExpandPanelDownwards(panelProducts,-shift);
-        ExpandPanelDownwards(panelRules,-shift);
+            string subPath = path.Contains("/") ? path.Substring(path.IndexOf('/') + 1) : "";
+            child = string.IsNullOrEmpty(subPath) ? root.transform : root.transform.Find(subPath);
+        }
+        else
+        {
+            child = transform.Find(path);
+        }
+        Debug.Log($"Toggling game transform {child}");
+        if (child != null)
+        {
+            bool currentState = child.gameObject.activeSelf;
+            Debug.Log($"Toggling game object {child.gameObject}");
+            child.gameObject.SetActive(!currentState); // Toggle the state
+        }
+        else
+        {
+            Debug.LogWarning($"Child with path '{path}' not found.");
+        }
     }
 
     public void DeleteChildByPath(string path)

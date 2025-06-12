@@ -8,8 +8,24 @@ using UnityEngine.SceneManagement;
 public class RuleCollector : MonoBehaviour
 {
     public List<PSystemRule> collectedRules = new(); // List to store collected rules
+    public List<string> collectedParams = new();
     public Transform parentTransform; // Assign the 'Rules' GameObject in the Inspector
     public static List<PSystemRule> SelectedRules = null;
+    public static List<string> SelectedParams = null;
+
+    public List<string> GetParams()
+    {
+        collectedParams.Clear();
+
+        collectedParams.Add(GameObject.Find("AngleHead").GetComponentInChildren<TMP_InputField>().text);
+        collectedParams.Add(GameObject.Find("AngleLeft").GetComponentInChildren<TMP_InputField>().text);
+        collectedParams.Add(GameObject.Find("AngleUp").GetComponentInChildren<TMP_InputField>().text);
+        collectedParams.Add(GameObject.Find("Axiom").GetComponentInChildren<TMP_InputField>().text);
+
+        Debug.Log($"Collected params: {string.Join(", ", collectedParams)}");
+
+        return collectedParams;
+    }
     public List<PSystemRule> GetRules()
     {
         collectedRules.Clear();
@@ -22,7 +38,7 @@ public class RuleCollector : MonoBehaviour
 
             if (predecessorInput != null)
             {
-                
+
                 Debug.Log(predecessorInput.text);
                 Debug.Log(labelsInput.text);
 

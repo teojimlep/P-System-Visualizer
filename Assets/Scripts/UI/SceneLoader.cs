@@ -11,13 +11,13 @@ public class SceneLoader : MonoBehaviour
     {
         if (sceneName == "TreeScene")
         {
-            List<PSystemRule> collectedRules = ruleCollector.GetRules();
-            RuleCollector.SelectedRules = collectedRules;
+            RuleCollector.SelectedRules = ruleCollector.GetRules();
+            RuleCollector.SelectedParams = ruleCollector.GetParams();
             //RuleManager.Instance.SetRules(collectedRules); // Send rules to the singleton
             //Debug.Log("Rules sent to RuleManager");
             string rootPath = Directory.GetParent(Application.dataPath).FullName;
             string lastRulesPath = Path.Combine(rootPath, "LastRules/last_rules.json");
-            JSONHandler.SaveRules(RuleCollector.SelectedRules, lastRulesPath);
+            JSONHandler.SaveRules(RuleCollector.SelectedRules, RuleCollector.SelectedParams, lastRulesPath);
         }
         
         SceneManager.LoadScene(sceneName);
