@@ -25,7 +25,7 @@ public class JSONHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("El archivo no existe");
+            LogManager.currentLogText = "There are no previous saved rules. Starting from scratch.";
         }
     }
     public void PromptedSaveRules()
@@ -36,7 +36,7 @@ public class JSONHandler : MonoBehaviour
 
         // Abrir un cuadro de diálogo para seleccionar la ruta del archivo
         // string filePath = EditorUtility.SaveFilePanel("Guardar reglas", "", "rules.json", "json");
-        var filePath = StandaloneFileBrowser.SaveFilePanel("Guardar reglas", "", "", "json");
+        var filePath = StandaloneFileBrowser.SaveFilePanel("Save rules", "", "", "json");
 
         // Verificar si se ha seleccionado un archivo
         if (!string.IsNullOrEmpty(filePath))
@@ -46,49 +46,57 @@ public class JSONHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("No se seleccionó ningún archivo para guardar.");
+            LogManager.currentLogText = "No se seleccionó ningún archivo para guardar.";
         }
     }
     public static void SaveRules(List<PSystemRule> rulesToSave, List<string> collectedParams, string filePath)
     {
-        JSONRules rootRules = new JSONRules
+        if (rulesToSave == null)
         {
-            Rules = new List<JSONRule>(),
-            HeadAngle = collectedParams[0],
-            LeftAngle = collectedParams[1],
-            UpAngle = collectedParams[2],
-            Axiom = collectedParams[3]
-        };
-
-        // Convertir PSystemRule a JSONRule
-        foreach (PSystemRule rule in rulesToSave)
+            LogManager.currentLogText += " Non valid rules.";
+            return;
+        }
+        else
         {
-            JSONRule jsonRule = new JSONRule
+            JSONRules rootRules = new JSONRules
             {
-                Predecessor = rule.ReactiveMultiset,
-                TargetLabels = new string(rule.MembraneLabels.ToArray()),
-                Products = new List<JSONPossibleProduct>()
+                Rules = new List<JSONRule>(),
+                HeadAngle = collectedParams[0],
+                LeftAngle = collectedParams[1],
+                UpAngle = collectedParams[2],
+                Axiom = collectedParams[3]
             };
 
-            foreach (var product in rule.PossibleProducts)
+            // Convertir PSystemRule a JSONRule
+            foreach (PSystemRule rule in rulesToSave)
             {
-                jsonRule.Products.Add(new JSONPossibleProduct
+                JSONRule jsonRule = new JSONRule
                 {
-                    Successor = product.Product,
-                    Probability = product.Probability.ToString("F3").Replace(',', '.')
-                });
+                    Predecessor = rule.ReactiveMultiset,
+                    TargetLabels = new string(rule.MembraneLabels.ToArray()),
+                    Products = new List<JSONPossibleProduct>()
+                };
+
+                foreach (var product in rule.PossibleProducts)
+                {
+                    jsonRule.Products.Add(new JSONPossibleProduct
+                    {
+                        Successor = product.Product,
+                        Probability = product.Probability.ToString("F3").Replace(',', '.')
+                    });
+                }
+
+                rootRules.Rules.Add(jsonRule);
             }
 
-            rootRules.Rules.Add(jsonRule);
+            // Convertir a JSON
+            string json = JsonUtility.ToJson(rootRules, true);
+
+            // Guardar en archivo
+            File.WriteAllText(filePath, json);
+
+            LogManager.currentLogText = "Rules were saved successfully.";
         }
-
-        // Convertir a JSON
-        string json = JsonUtility.ToJson(rootRules, true);
-
-        // Guardar en archivo
-        File.WriteAllText(filePath, json);
-
-        Debug.Log($"Reglas guardadas en: {filePath}");
     }
     public void PromptedLoadRules()
     {
@@ -104,7 +112,7 @@ public class JSONHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("No file selected or dialog canceled.");
+            LogManager.currentLogText = "No file has been selected or the operation was cancelled.";
             // Handle cancel or no selection appropriately
         }
 
@@ -117,19 +125,18 @@ public class JSONHandler : MonoBehaviour
             if (loadedRules != null)
             {
                 ruleCollector.SetRules(loadedRules);
-                Debug.Log("Reglas cargadas correctamente.");
+                LogManager.currentLogText = "Loaded rules successfully.";
             }
             else
             {
-                Debug.LogError("Error al cargar el archivo JSON.");
+                LogManager.currentLogText = "There was an error loading the json file.";
             }
         }
         else
         {
-            Debug.Log("No se seleccionó ningún archivo.");
+            LogManager.currentLogText = "The json file was not found.";
         }
     }
-
     public List<PSystemRule> LoadRules(string filePath)
     {
         // Key objects to load the data into the UI
@@ -139,7 +146,7 @@ public class JSONHandler : MonoBehaviour
         // Verificar si el archivo existe
         if (!File.Exists(filePath))
         {
-            Debug.LogError($"El archivo {filePath} no existe.");
+            LogManager.currentLogText = $"The selected file does not exist.";
             return null;
         }
 
@@ -147,7 +154,7 @@ public class JSONHandler : MonoBehaviour
         string json = File.ReadAllText(filePath);
 
         // Deserializar el JSON a la estructura JSONRules
-        Debug.Log($"JSON leído:\n{json}");
+        //Debug.Log($"JSON leído:\n{json}");
         JSONRules rootRules = JsonUtility.FromJson<JSONRules>(json);
 
         // Write parameters in the UI
@@ -158,7 +165,7 @@ public class JSONHandler : MonoBehaviour
 
         if (rootRules == null || rootRules.Rules == null)
         {
-            Debug.LogError("El archivo JSON no contiene reglas válidas.");
+            LogManager.currentLogText = "The selected file does not contain a set of valid rules. Check syntax.";
             return null;
         }
 
@@ -179,7 +186,6 @@ public class JSONHandler : MonoBehaviour
             Transform ruleSetterTransform = rulesContainer.Find($"RuleSetter_{ruleIndex}");
             if (ruleSetterTransform == null)
             {
-                Debug.Log($"RuleSetter_{ruleIndex} no existe. ¿Pulsando botón?");
                 Transform addRuleButton = rulesContainer.Find($"RuleSetter_{ruleIndex-1}/AddNewRule");
                 addRuleButton.gameObject.GetComponent<Button>().onClick.Invoke();
                 ruleSetter = rulesContainer.Find($"RuleSetter_{ruleIndex}").gameObject;
@@ -187,7 +193,6 @@ public class JSONHandler : MonoBehaviour
             else
             {
                 ruleSetter = ruleSetterTransform.gameObject;
-                Debug.Log($"{ruleSetter.name} existe.");
             }
             ruleSetterTransform = ruleSetter.transform;
 
@@ -215,7 +220,6 @@ public class JSONHandler : MonoBehaviour
                 Transform currentProductTransform = productsTransform.Find($"Product_{productIndex}");
                 if (currentProductTransform == null)
                 {
-                    Debug.Log($"Product_{productIndex} no existe. ¿Pulsando botón?");
                     Transform addProductButton = productsTransform.Find($"Product_{productIndex-1}/AddNewProduct");
                     addProductButton.gameObject.GetComponent<Button>().onClick.Invoke();
                     currentProduct = productsTransform.Find($"Product_{productIndex}").gameObject;
@@ -223,7 +227,6 @@ public class JSONHandler : MonoBehaviour
                 else
                 {
                     currentProduct = currentProductTransform.gameObject;
-                    Debug.Log($"{currentProduct.name} existe.");
                 }
                 currentProductTransform = currentProduct.transform;
 
@@ -240,7 +243,6 @@ public class JSONHandler : MonoBehaviour
             ruleIndex++;
         }
 
-        Debug.Log(loadedRules.ToString());
         return loadedRules;
     }
 }

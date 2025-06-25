@@ -16,18 +16,16 @@ public class RuleCollector : MonoBehaviour
     public List<string> GetParams()
     {
         collectedParams.Clear();
-
         collectedParams.Add(GameObject.Find("AngleHead").GetComponentInChildren<TMP_InputField>().text);
         collectedParams.Add(GameObject.Find("AngleLeft").GetComponentInChildren<TMP_InputField>().text);
         collectedParams.Add(GameObject.Find("AngleUp").GetComponentInChildren<TMP_InputField>().text);
         collectedParams.Add(GameObject.Find("Axiom").GetComponentInChildren<TMP_InputField>().text);
 
-        Debug.Log($"Collected params: {string.Join(", ", collectedParams)}");
-
         return collectedParams;
     }
     public List<PSystemRule> GetRules()
     {
+        LogManager.currentLogText = "";
         collectedRules.Clear();
 
         foreach (Transform rule in parentTransform) // Loop through each RuleSetter_#
@@ -36,14 +34,24 @@ public class RuleCollector : MonoBehaviour
             TMP_InputField predecessorInput = rule.Find("MulPredecessor").GetComponentInChildren<TMP_InputField>();
             TMP_InputField labelsInput = rule.Find("TargetLabels").GetComponentInChildren<TMP_InputField>();
 
-            if (predecessorInput != null)
+            if (string.IsNullOrEmpty(predecessorInput.text))
             {
-
-                Debug.Log(predecessorInput.text);
-                Debug.Log(labelsInput.text);
-
+                LogManager.currentLogText = "Every rule must be tied to a valid predecessor.";
+                return null;
+            }
+            else
+            {
                 // Store target membrane labels in a list
-                List<char> targetLabels = new List<char>(labelsInput.text.ToList());
+                List<char> targetLabels = null;
+                try
+                {
+                    targetLabels = new List<char>(labelsInput.text.ToList());
+                }
+                catch
+                {
+                    LogManager.currentLogText = "Labels must be comma separated single characters.";
+                    return null;
+                }
 
                 // Create a new PSystemRule and add it to the list
                 List<(float Probability, string Product)> ruleProducts = new();
@@ -55,26 +63,41 @@ public class RuleCollector : MonoBehaviour
                     {
                         TMP_InputField successorInput = product.Find("MulSuccessor").GetComponentInChildren<TMP_InputField>();
                         TMP_InputField probInput = product.Find("Probability").GetComponentInChildren<TMP_InputField>();
-                        Debug.Log(successorInput.text);
                         if (probInput != null && successorInput != null)
                         {
-                            Debug.Log(probInput.text);
-                            ruleProducts.Add((float.Parse(probInput.text, CultureInfo.InvariantCulture.NumberFormat), successorInput.text));
+                            float prob;
+                            try
+                            {
+                                prob = float.Parse(probInput.text, CultureInfo.InvariantCulture.NumberFormat);
+                            }
+                            catch
+                            {
+                                LogManager.currentLogText = "Probabilities must be numbers.";
+                                return null;
+                            }
+                            ruleProducts.Add((prob, successorInput.text));
+                        }
+                        else
+                        {
+                            LogManager.currentLogText = "Probabilities and products must be indicated.";
+                            return null;
                         }
                     }
                 }
 
-                PSystemRule newRule = new(reactiveMultiset: predecessorInput.text, ruleProducts, targetLabels);
-                Debug.Log(newRule.ToString());
-                collectedRules.Add(newRule);
-            }
-            else
-            {
-                Debug.LogWarning($"Missing TMP_InputField in rule: {rule.name}");
+                try
+                {
+                    PSystemRule newRule = new(reactiveMultiset: predecessorInput.text, ruleProducts, targetLabels);
+                    collectedRules.Add(newRule);
+                }
+                catch
+                {
+                    LogManager.currentLogText = "Predecessors, prodcuts and labels must be in the correct format.";
+                    return null;
+                }
             }
         }
-
-        Debug.Log($"Collected {collectedRules.Count} rules.");
+        LogManager.currentLogText = "Rules are in the correct format.";
         return collectedRules;
     }
 

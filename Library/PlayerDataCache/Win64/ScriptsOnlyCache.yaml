@@ -1,8 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AppControl
     - FocusCamera
     - JSONHandler
+    - LogManager
     - PSystemVisualizer
     - PTree
     - ProductSetter
@@ -83,6 +85,45 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
+    fullTypeName: RuleSetter
+    methodName: Delete
+  - assembly: Assembly-CSharp
+    fullTypeName: ProductSetter
+    methodName: Replicate
+  - assembly: Assembly-CSharp
+    fullTypeName: ProductSetter
+    methodName: Delete
+  - assembly: Assembly-CSharp
+    fullTypeName: SceneLoader
+    methodName: LoadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: AppControl
+    methodName: CloseApp
+  - assembly: Assembly-CSharp
+    fullTypeName: SceneLoader
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: JSONHandler
+    methodName: PromptedLoadRules
+  - assembly: Assembly-CSharp
+    fullTypeName: JSONHandler
+    methodName: PromptedSaveRules
+  - assembly: Assembly-CSharp
+    fullTypeName: ProductSetter
+    methodName: Replicate
+  - assembly: Assembly-CSharp
+    fullTypeName: ProductSetter
+    methodName: Delete
+  - assembly: Assembly-CSharp
+    fullTypeName: RuleSetter
+    methodName: AddNewRule
+  - assembly: Assembly-CSharp
+    fullTypeName: RuleSetter
+    methodName: Delete
+  - assembly: Assembly-CSharp
+    fullTypeName: AppControl
+    methodName: CloseApp
+  - assembly: Assembly-CSharp
     fullTypeName: PTree
     methodName: DestroyTree
   - assembly: Assembly-CSharp
@@ -97,39 +138,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: FocusCamera
     methodName: FocusOnTarget
-  - assembly: Assembly-CSharp
-    fullTypeName: SceneLoader
-    methodName: LoadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: SceneLoader
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: JSONHandler
-    methodName: PromptedLoadRules
-  - assembly: Assembly-CSharp
-    fullTypeName: JSONHandler
-    methodName: PromptedSaveRules
-  - assembly: Assembly-CSharp
-    fullTypeName: RuleSetter
-    methodName: AddNewRule
-  - assembly: Assembly-CSharp
-    fullTypeName: ProductSetter
-    methodName: Replicate
-  - assembly: Assembly-CSharp
-    fullTypeName: ProductSetter
-    methodName: Delete
-  - assembly: Assembly-CSharp
-    fullTypeName: RuleSetter
-    methodName: Delete
-  - assembly: Assembly-CSharp
-    fullTypeName: RuleSetter
-    methodName: Delete
-  - assembly: Assembly-CSharp
-    fullTypeName: ProductSetter
-    methodName: Replicate
-  - assembly: Assembly-CSharp
-    fullTypeName: ProductSetter
-    methodName: Delete
   sceneClasses:
     Assets/Scenes/RulesScene.unity:
     - Class: 1
@@ -143,6 +151,8 @@ ScriptsOnlyBuild:
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -159,7 +169,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1692}
     - Class: 114
-      Script: {instanceID: 1732}
+      Script: {instanceID: 1734}
+    - Class: 114
+      Script: {instanceID: 2194}
     - Class: 114
       Script: {instanceID: 2622}
     - Class: 114
@@ -169,34 +181,46 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 3888}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 3954}
+      Script: {instanceID: 3890}
     - Class: 114
-      Script: {instanceID: 4104}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4894}
+      Script: {instanceID: 4012}
     - Class: 114
-      Script: {instanceID: 5074}
+      Script: {instanceID: 4106}
     - Class: 114
-      Script: {instanceID: 5624}
+      Script: {instanceID: 4120}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 4372}
     - Class: 114
-      Script: {instanceID: 5782}
+      Script: {instanceID: 4896}
     - Class: 114
-      Script: {instanceID: 6094}
+      Script: {instanceID: 5076}
     - Class: 114
-      Script: {instanceID: 6102}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 6488}
+      Script: {instanceID: 5778}
     - Class: 114
-      Script: {instanceID: 7046}
+      Script: {instanceID: 5784}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 6096}
+    - Class: 114
+      Script: {instanceID: 6104}
+    - Class: 114
+      Script: {instanceID: 6490}
+    - Class: 114
+      Script: {instanceID: 7048}
+    - Class: 114
+      Script: {instanceID: 7150}
+    - Class: 114
+      Script: {instanceID: 7450}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 156
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -209,6 +233,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 1953259897
       Script: {instanceID: 0}
     Assets/Scenes/TreeScene.unity:
     - Class: 1
@@ -231,8 +257,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -244,9 +268,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 1732}
+      Script: {instanceID: 1710}
     - Class: 114
-      Script: {instanceID: 2192}
+      Script: {instanceID: 1734}
     - Class: 114
       Script: {instanceID: 2564}
     - Class: 114
@@ -256,34 +280,28 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 4010}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 4104}
+      Script: {instanceID: 4106}
     - Class: 114
-      Script: {instanceID: 4118}
+      Script: {instanceID: 4896}
     - Class: 114
-      Script: {instanceID: 4370}
+      Script: {instanceID: 5076}
     - Class: 114
-      Script: {instanceID: 4894}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 5074}
+      Script: {instanceID: 5778}
     - Class: 114
-      Script: {instanceID: 5624}
+      Script: {instanceID: 6096}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 7048}
     - Class: 114
-      Script: {instanceID: 6094}
+      Script: {instanceID: 7450}
     - Class: 114
-      Script: {instanceID: 7046}
-    - Class: 114
-      Script: {instanceID: 7786}
-    - Class: 114
-      Script: {instanceID: 7902}
+      Script: {instanceID: 7790}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 156
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -296,8 +314,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 1953259897
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -336,6 +352,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: d14082b8f2621af870d4709a8497b77c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PTree
   - hash:
       serializedVersion: 2
       Hash: 8dff8e9853297d341afa0c11f9091b59
@@ -434,19 +456,13 @@ ScriptsOnlyBuild:
     className: CanvasSampleOpenFileTextMultiple
   - hash:
       serializedVersion: 2
-      Hash: 83788b488f9ef756a53d43dac53b8c98
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CameraController
-  - hash:
-      serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
   - hash:
       serializedVersion: 2
-      Hash: ca783a99bd2aa0921847db5d72e7bbfe
+      Hash: 2efc464edabe0c4bd18c362c3486c4d2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: FocusCamera
@@ -668,6 +684,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: e175a46bc4a40313eccc1750886be598
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LogManager
+  - hash:
+      serializedVersion: 2
       Hash: 418b67019f13f9684552f2693bae3971
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -746,7 +768,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: c6ac933e703dd8ae926456c5b11396b5
+      Hash: f6cd17daf678bc6118419488d598e4b9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RuleCollector
@@ -1340,6 +1362,12 @@ ScriptsOnlyBuild:
     className: TMP_PhoneNumberValidator
   - hash:
       serializedVersion: 2
+      Hash: 6d41c8ed25c553237e62cd4be81d07d0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AppControl
+  - hash:
+      serializedVersion: 2
       Hash: c4ae0ec287bc3cde0bc98e1a65f9cef7
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1382,7 +1410,7 @@ ScriptsOnlyBuild:
     className: UnityOnToggleValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 38bf8617cb92f3141700464d3d5ca059
+      Hash: 15324c4ae81d12949b02d5e21a3e4b5a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PSystemVisualizer
@@ -1416,14 +1444,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 760cf768438aeb5870e308c4d0c40720
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PTree
   platform: 19
   scenePathNames:
-  - Assets/Scenes/TreeScene.unity
   - Assets/Scenes/RulesScene.unity
-  playerPath: C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D.exe
+  - Assets/Scenes/TreeScene.unity
+  playerPath: C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app/PLSystems3D.exe

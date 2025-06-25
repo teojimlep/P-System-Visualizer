@@ -13,6 +13,8 @@ public class PSystemVisualizer : MonoBehaviour
     public float headAngle;
     public float leftAngle;
     public float upAngle;
+    public int nBranches = 0;
+    public int nLeaves = 0;
 
     public Turtle _turtle;
     public Turtle Turtle{get{return this._turtle;}set{this._turtle=value;}}
@@ -23,7 +25,7 @@ public class PSystemVisualizer : MonoBehaviour
         if (length > 0f)
         {
             // Debug line
-            Debug.DrawLine(startPos, endPos, Color.red, 5f);
+            Debug.DrawLine(startPos, endPos, Color.black, 5f);
 
             // Scale prefab before
             BranchPrefab.transform.localScale = new Vector3(branchRadius, length / 2f, branchRadius);
@@ -44,22 +46,26 @@ public class PSystemVisualizer : MonoBehaviour
             if (isLeaf)
             {
                 Color vibrantLightGreen = new Color(0.3f, 1f, 0.3f, 1f);
-                createdBranch.GetComponent<Renderer>().material.color = vibrantLightGreen;
+                Color forestGreen = new Color(0.13f, 0.55f, 0.13f, 1f);
+                createdBranch.GetComponent<Renderer>().material.color = forestGreen; //vibrantLightGreen;
+                this.nLeaves++;
             }
+            this.nBranches++;
         }
     }
 
     public void DrawMembrane(Membrane drawnMembrane)
     {
         // Counting the number of W's and F's to determine the width and length of the created branch
-        float branchRadius = (1 + Mathf.Log(drawnMembrane.Multiset["W"])) * this.BranchUnitRadius;
+        //float branchRadius = (1 + Mathf.Log(drawnMembrane.Multiset["W"])) * this.BranchUnitRadius;
+        float branchRadius = drawnMembrane.Multiset["W"] * this.BranchUnitRadius;
         float branchLength = drawnMembrane.Multiset["F"]*  this.BranchUnitLength;
         // Determining the net count of +'s to determine the angle to be rotated
         float upRotationAngleMultiplier = drawnMembrane.Multiset["+"] - drawnMembrane.Multiset["-"];        
         float leftRotationAngleMultiplier = drawnMembrane.Multiset["&"] - drawnMembrane.Multiset["^"];
         float headRotationAngleMultiplier = drawnMembrane.Multiset[">"] - drawnMembrane.Multiset["<"];
         // Determining if it is a leaf
-        bool isLeaf = drawnMembrane.Multiset["Leaf"] == 1;
+        bool isLeaf = drawnMembrane.Multiset["Leaf"] >= 1;
 
         // Turtle operations:
         Vector3 startPos = _turtle.State.Position; // Store initial position

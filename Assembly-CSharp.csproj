@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\UI\RuleCollector.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\UI\ExitApp.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\Sample\CanvasSampleOpenFileImage.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowserMac.cs" />
@@ -119,8 +120,8 @@
     <Compile Include="Assets\Scripts\Spawn\FocusCamera.cs" />
     <Compile Include="Assets\Scripts\Logic\Turtle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-    <Compile Include="Assets\Scripts\Spawn\CameraController.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowserEditor.cs" />
+    <Compile Include="Assets\Scripts\UI\ErrorHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
   <ItemGroup>

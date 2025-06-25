@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 using System.Linq;
 using System.Text;
 using TMPro;
+//using System.Windows.Forms;
 
 public class PSystemBuilder
 
@@ -322,7 +323,7 @@ public class PSystemRule
             throw new ArgumentException($"The total probability must be 1. Total probability: {totalProbability}");
         }
         // Generate random float number fom 0 to 1
-        float randomPoint = UnityEngine.Random.Range(0f, totalProbability);
+        float randomPoint = UnityEngine.Random.value;
         // Calculate the chosen candidate 
         for (int i = 0; i < probabilities.Count; i++)
         {
@@ -650,6 +651,7 @@ public class PSystem
             {
                 this.EvolveMembrane(membrane: innerMembrane, depth:depth+1);
             }
+            
             // Incorporate the products
             //  - Membranes
             foreach (Membrane incorporatingMembrane in totalProducedMembranes)

@@ -13,13 +13,18 @@ public class SceneLoader : MonoBehaviour
         {
             RuleCollector.SelectedRules = ruleCollector.GetRules();
             RuleCollector.SelectedParams = ruleCollector.GetParams();
-            //RuleManager.Instance.SetRules(collectedRules); // Send rules to the singleton
-            //Debug.Log("Rules sent to RuleManager");
             string rootPath = Directory.GetParent(Application.dataPath).FullName;
             string lastRulesPath = Path.Combine(rootPath, "LastRules/last_rules.json");
             JSONHandler.SaveRules(RuleCollector.SelectedRules, RuleCollector.SelectedParams, lastRulesPath);
+            if (LogManager.currentLogText == "Rules were saved successfully.")
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+            else
+            {
+                return;
+            }
         }
-        
         SceneManager.LoadScene(sceneName);
     }
 
@@ -42,11 +47,11 @@ public static class FileDeleter
         if (File.Exists(fullPath))
         {
             File.Delete(fullPath);
-            Debug.Log(relativePath + " deleted successfully.");
+            LogManager.currentLogText = "Eliminadas las reglas guardadas en memoria.";
         }
         else
         {
-            Debug.LogWarning(relativePath + " not found!");
+            LogManager.currentLogText = "Eliminadas las reglas guardadas en memoria.";
         }
     }
 }

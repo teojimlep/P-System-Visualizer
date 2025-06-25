@@ -82,10 +82,19 @@ public class TurtleSpace
         return new Vector3(centerX, centerY, centerZ);
     }
 
+    public Vector3 GetDimensions()
+    {
+        float lengthX = Mathf.Abs(XLim[0] - XLim[1]);
+        float lengthY = Mathf.Abs(YLim[0] - YLim[1]);
+        float lengthZ = Mathf.Abs(ZLim[0] - ZLim[1]);
+
+        return new Vector3(lengthX, lengthY, lengthZ);
+    }
+
     // Visualize the bounding box in the Unity editor using Gizmos
     public void DrawBoundingBox()
     {
-        
+
         Vector3 min = new Vector3(XLim[0], YLim[0], ZLim[0]);
         Vector3 max = new Vector3(XLim[1], YLim[1], ZLim[1]);
         Debug.Log(min);

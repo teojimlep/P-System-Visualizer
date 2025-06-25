@@ -7,6 +7,9 @@ using UnityEngine.Subsystems;
 using System.Globalization;
 using System.Diagnostics;
 using System.IO;
+using UnityEngine.UI;
+using System.Linq.Expressions;
+using Unity.VisualScripting;
 
 
 public class PTree : MonoBehaviour
@@ -18,13 +21,16 @@ public class PTree : MonoBehaviour
     public TMP_InputField leftAngle;
     public TMP_InputField upAngle;
     public TMP_InputField Seed;
+    public TextMeshProUGUI SizeText;
+    public TextMeshProUGUI NBranchesText;
+    public TextMeshProUGUI NLeavesText;
     public GameObject PVisualizerPrefab;
     //public string EasyMembrane;
 
-    // Rotation flag
+    // Flags
     public bool CanRotate = false;
     public bool Rotating = false;
-    public int Example = 0;
+
     // Tree parent gameobject
     public GameObject PVisualizerObject;
     // Current tree membrane
@@ -51,41 +57,48 @@ public class PTree : MonoBehaviour
         string seedText = this.Seed.text;
         if (int.TryParse(seedText, out int seed))
         {
-            UnityEngine.Debug.Log($"Seed set to: {seed}");
+            LogManager.currentLogText = $"Seed set to: {seed}";
         }
         else
         {
             seed = System.Environment.TickCount; // or use DateTime.Now.Millisecond, etc.
-            seed = Mathf.Abs(seed % 10000);
-            UnityEngine.Debug.Log($"No valid seed entered — using generated seed: {seed}");
+            seed = Mathf.Abs(seed % 999);            
+            LogManager.currentLogText = $"No valid seed entered — using generated seed: {seed}";
         }
         UnityEngine.Random.InitState(seed);
+        this.Seed.text = seed.ToString();
     }
 
     public void EvolveAndSpawn()
     {
-        this.InitTreeMembrane();
-        this.SetRandomSeed();
-        this.TreePSystem.EvolveMembrane(nIterations: int.Parse(this.NumIterations.text));
-        UnityEngine.Debug.Log($"MString evolved: {TreePSystem.MembraneString}");
-        //this.TreeMembrane = new(easyMembrane: TreePSystem.MembraneString);
-        UnityEngine.Debug.Log($"M evolved: {this.TreePSystem.SystemMembrane}");
-        this.SpawnTree(treeMembrane: this.TreePSystem.SystemMembrane, spawnPosition: new(0f, 0f, 0f));
-    }
-
-    public void GrowNaturally()
-    {
-        if (this.TreeMembrane != null)
-        {
-            this.DestroyTree();
-        }
-        else
+        try
         {
             this.InitTreeMembrane();
         }
-        this.TreePSystem.EvolveMembrane(nIterations: 1);
-        Vector3 spawnPosition = new(0f,-4f,0f);
-        this.SpawnTree(treeMembrane: this.TreeMembrane, spawnPosition: spawnPosition);
+        catch
+        {
+            LogManager.currentLogText = $"Invalid axiom";
+            return;
+        }
+        this.SetRandomSeed();
+        try
+        {
+            this.TreePSystem.EvolveMembrane(nIterations: int.Parse(this.NumIterations.text));
+        }
+        catch
+        {
+            LogManager.currentLogText = $"Error evolving. Check number of iterations.";
+            return;
+        }
+        try
+        {
+            this.SpawnTree(treeMembrane: this.TreePSystem.SystemMembrane, spawnPosition: new(0f, 0f, 0f));
+        }
+        catch
+        {
+            LogManager.currentLogText = $"Error spawning. Check angles.";
+            return;
+        }
     }
 
     public void SpawnTree(Membrane treeMembrane, Vector3 spawnPosition)
@@ -107,6 +120,13 @@ public class PTree : MonoBehaviour
 
         // Draw the membrane
         PVisualizer.DrawMembrane(drawnMembrane: treeMembrane);
+
+        // Show data on screen
+        this.NBranchesText.text = $"Branches: {PVisualizer.nBranches}";
+        this.NLeavesText.text = $"Leaves: {PVisualizer.nLeaves}";
+        Vector3 treeDimensions = PVisualizer.Turtle.ExploredSpace.GetDimensions();
+        string dimensionsString = string.Format(CultureInfo.InvariantCulture,"Tree size: ({0:F2}, {1:F2}, {2:F2})", treeDimensions.x, treeDimensions.y, treeDimensions.z);
+        this.SizeText.text = dimensionsString;
 
         // Once the tree has been completely generated, it can rotate if desired
         this.CanRotate = true;
@@ -164,19 +184,6 @@ public class TimerSummary : MonoBehaviour
             if (!callCounts.ContainsKey(label))
                 callCounts[label] = 0;
             callCounts[label]++;
-        }
-    }
-
-    public void PrintSummary()
-    {
-        UnityEngine.Debug.Log("=== Timer Summary ===");
-        foreach (var kvp in totalTimes)
-        {
-            string label = kvp.Key;
-            long total = kvp.Value;
-            int count = callCounts[label];
-            float avg = (float)total / count;
-            UnityEngine.Debug.Log($"{label}: Total = {total} ms, Calls = {count}, Avg = {avg:F2} ms");
         }
     }
 

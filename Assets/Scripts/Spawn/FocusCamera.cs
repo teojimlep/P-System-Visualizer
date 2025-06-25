@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SocialPlatforms.GameCenter;
-using Unity.VisualScripting;
+//using UnityEngine.SocialPlatforms.GameCenter;
+//using Unity.VisualScripting;
 using SFB;
+//using UnityEngine.UI;
 
 public class FocusCamera : MonoBehaviour
 {
@@ -14,11 +15,9 @@ public class FocusCamera : MonoBehaviour
     public float rotateSpeed = 20000f; // Speed of rotation
     public float minZoom = 1f;    // Minimum zoom distance
     public float maxZoom = 500f;   // Maximum zoom distance
-
+    private bool ShowBoundingBox = false;
     private Camera mainCamera;
-
     private (Vector3 pos, Quaternion rot, Vector3 scale) originalCameraConfig;
-
     private Vector3 lastMousePosition;
     private GameObject targetObject;
     private List<float> xLim;
@@ -48,9 +47,9 @@ public class FocusCamera : MonoBehaviour
                 Vector3 direction = (mainCamera.transform.position - targetCenter).normalized;
                 Vector3 zoomStep = zoom * zoomSpeed * Time.deltaTime * direction;
                 Vector3 newCameraPosition = mainCamera.transform.position + zoomStep;
-                float newDistance = Vector3.Distance(newCameraPosition, targetCenter);
                 mainCamera.transform.position = newCameraPosition;
             }
+            distanceToTarget = Vector3.Distance(mainCamera.transform.position, targetObject.transform.position);
 
             // Pan with left mouse button
             if (Input.GetMouseButton(0))
@@ -59,6 +58,7 @@ public class FocusCamera : MonoBehaviour
                 Vector3 move = (-mainCamera.transform.right * mouseDelta.x - mainCamera.transform.up * mouseDelta.y) * panSpeed * Time.deltaTime;
                 mainCamera.transform.Translate(move, Space.World);
             }
+            distanceToTarget = Vector3.Distance(mainCamera.transform.position, targetObject.transform.position);
 
             // Rotate with right mouse button
             if (Input.GetMouseButton(1))
@@ -89,8 +89,14 @@ public class FocusCamera : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.C))
             {
-                FocusOnTarget();
+                //FocusOnTarget();
                 StartCoroutine(CaptureScreenshot(mainCamera));
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                //FocusOnTarget();
+                targetObject.transform.Rotate(Vector3.right, 90f);
             }
 
             lastMousePosition = Input.mousePosition;
@@ -99,40 +105,49 @@ public class FocusCamera : MonoBehaviour
 
     public void FocusOnTarget()
     {
-        (mainCamera.transform.position, mainCamera.transform.rotation, mainCamera.transform.localScale) = originalCameraConfig;
-        // Locate the object of interest
-        targetObject = GameObject.Find("PTree");
-        // Access the PSystemVisualizer component in targetObject
-        PSystemVisualizer visualizer = targetObject.GetComponent<PSystemVisualizer>();
-
-        if (visualizer != null)
+        try
         {
-            // Get the center of the explored space
-            this.targetCenter = visualizer.Turtle.ExploredSpace.GetCenter();
-            //visualizer.Turtle.ExploredSpace.DrawBoundingBox();
-            //Debug.Log($"Calculated center {targetCenter}");
+            (mainCamera.transform.position, mainCamera.transform.rotation, mainCamera.transform.localScale) = originalCameraConfig;
+            // Locate the object of interest
+            targetObject = GameObject.Find("PTree");
+            // Access the PSystemVisualizer component in targetObject
+            PSystemVisualizer visualizer = targetObject.GetComponent<PSystemVisualizer>();
 
-            // Get the bounding box from the turtle space
-            xLim = visualizer.Turtle.ExploredSpace.XLim;
-            yLim = visualizer.Turtle.ExploredSpace.YLim;
-            zLim = visualizer.Turtle.ExploredSpace.ZLim;
+            if (visualizer != null)
+            {
+                // Get the center of the explored space
+                this.targetCenter = visualizer.Turtle.ExploredSpace.GetCenter();
 
-            // Calculate the size of the bounding box
-            float objectSize = Mathf.Max(xLim[1] - xLim[0], yLim[1] - yLim[0], zLim[1] - zLim[0]);
+                if (ShowBoundingBox)
+                {
+                    visualizer.Turtle.ExploredSpace.DrawBoundingBox();
+                }
 
-            targetRadius = Mathf.Max(xLim[1] - xLim[0], yLim[1] - yLim[0]);
-            Debug.Log($"target radius {targetRadius}");
+                // Get the bounding box from the turtle space
+                xLim = visualizer.Turtle.ExploredSpace.XLim;
+                yLim = visualizer.Turtle.ExploredSpace.YLim;
+                zLim = visualizer.Turtle.ExploredSpace.ZLim;
 
-            // Calculate the camera's required distance to fit the object on screen
-            float distance = objectSize / (2f * Mathf.Tan(mainCamera.fieldOfView * 0.5f * Mathf.Deg2Rad));
+                // Calculate the size of the bounding box
+                float objectSize = Mathf.Max(xLim[1] - xLim[0], yLim[1] - yLim[0], zLim[1] - zLim[0]);
 
-            // Adjust the camera's position to focus on the object
-            Vector3 desiredPosition = targetCenter - mainCamera.transform.forward * (distance * (1 + relPadding));
-            StartCoroutine(SmoothCameraMove(mainCamera.transform.position, desiredPosition, autoZoomSpeed));
+                targetRadius = Mathf.Max(xLim[1] - xLim[0], yLim[1] - yLim[0]);
+                Debug.Log($"target radius {targetRadius}");
+
+                // Calculate the camera's required distance to fit the object on screen
+                float distance = objectSize / (2f * Mathf.Tan(mainCamera.fieldOfView * 0.5f * Mathf.Deg2Rad));
+
+                // Adjust the camera's position to focus on the object
+                Vector3 desiredPosition = targetCenter - mainCamera.transform.forward * (distance * (1 + relPadding));
+                StartCoroutine(SmoothCameraMove(mainCamera.transform.position, desiredPosition, autoZoomSpeed));
+            }
+            else
+            {
+                Debug.LogError("PSystemVisualizer component not found on target object.");
+            }
         }
-        else
+        catch
         {
-            Debug.LogError("PSystemVisualizer component not found on target object.");
         }
     }
 

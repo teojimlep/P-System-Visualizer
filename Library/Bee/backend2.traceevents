@@ -1,478 +1,338 @@
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1743094820328014, "dur":20617, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820348637, "dur":127, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820348811, "dur":406, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820349237, "dur":3667, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820352908, "dur":95271, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820448180, "dur":207, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820448626, "dur":1493, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1743094820349272, "dur":3641, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1743094820352920, "dur":6205, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1743094820360320, "dur":630, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/boot.config_tyr4.info" }}
-,{ "pid":12345, "tid":1, "ts":1743094820360953, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1743094820361057, "dur":920, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":1, "ts":1743094820362140, "dur":575, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":1, "ts":1743094820362781, "dur":124, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\Player117383cb-inputdata.json" }}
-,{ "pid":12345, "tid":1, "ts":1743094820360952, "dur":2484, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1743094820364111, "dur":79544, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1743094820447436, "dur":79, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1743094820447436, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1743094820447529, "dur":613, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/boot.config" }}
-,{ "pid":12345, "tid":2, "ts":1743094820349310, "dur":3621, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1743094820352937, "dur":898, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1743094820353836, "dur":5320, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1743094820359206, "dur":113, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
-,{ "pid":12345, "tid":2, "ts":1743094820359156, "dur":164, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":2, "ts":1743094820359321, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1743094820359440, "dur":7720, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Core.pdb" }}
-,{ "pid":12345, "tid":2, "ts":1743094820359438, "dur":7724, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.VisualScripting.Core.pdb" }}
-,{ "pid":12345, "tid":2, "ts":1743094820367162, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1743094820367217, "dur":80975, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1743094820349345, "dur":3598, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1743094820352950, "dur":767, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1743094820353717, "dur":5422, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359157, "dur":173, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359140, "dur":191, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359332, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359403, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\WindowsPlayer.exe" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359403, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D.exe" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359459, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359523, "dur":7022, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.pdb" }}
-,{ "pid":12345, "tid":3, "ts":1743094820359521, "dur":7025, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Assembly-CSharp.pdb" }}
-,{ "pid":12345, "tid":3, "ts":1743094820366573, "dur":703, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Assembly-CSharp.pdb" }}
-,{ "pid":12345, "tid":3, "ts":1743094820367304, "dur":80873, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1743094820349300, "dur":3620, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1743094820352932, "dur":884, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1743094820353816, "dur":5336, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1743094820359170, "dur":199, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
-,{ "pid":12345, "tid":4, "ts":1743094820359154, "dur":216, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":4, "ts":1743094820359370, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1743094820359445, "dur":7170, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.pdb" }}
-,{ "pid":12345, "tid":4, "ts":1743094820359444, "dur":7172, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UI.pdb" }}
-,{ "pid":12345, "tid":4, "ts":1743094820366617, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1743094820366672, "dur":81528, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820349329, "dur":3608, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820352941, "dur":830, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820353771, "dur":5383, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359155, "dur":149, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359305, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359391, "dur":127, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359382, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359519, "dur":183, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359707, "dur":59, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityWebRequestWWWModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359706, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityWebRequestWWWModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359768, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359832, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityAnalyticsModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359831, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityAnalyticsModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820359884, "dur":193, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360083, "dur":69, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.SubsystemsModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360081, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.SubsystemsModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360153, "dur":109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360322, "dur":98, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.PropertiesModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360321, "dur":100, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.PropertiesModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360421, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360519, "dur":95, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.JSONSerializeModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360518, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.JSONSerializeModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820360615, "dur":197, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820361385, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ClusterRendererModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820361384, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ClusterRendererModule.pdb" }}
-,{ "pid":12345, "tid":5, "ts":1743094820361441, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820361500, "dur":1424, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":5, "ts":1743094820361499, "dur":1426, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":5, "ts":1743094820362925, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820362996, "dur":156, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820363156, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820363214, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1743094820363321, "dur":84859, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820349370, "dur":3579, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820352956, "dur":839, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820353796, "dur":5361, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359158, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359282, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359392, "dur":137, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359380, "dur":150, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359530, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359599, "dur":63, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.VirtualTexturingModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359598, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.VirtualTexturingModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359663, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359744, "dur":64, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityWebRequestAudioModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359742, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityWebRequestAudioModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359809, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820359938, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360050, "dur":181, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360240, "dur":52, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.SpriteMaskModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360239, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.SpriteMaskModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360294, "dur":123, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360447, "dur":469, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.NVIDIAModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360446, "dur":471, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.NVIDIAModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360917, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360992, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.AndroidJNIModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820360990, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.AndroidJNIModule.pdb" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361047, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361112, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361183, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361252, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361312, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361398, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361515, "dur":362, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361514, "dur":363, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":6, "ts":1743094820361878, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362017, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362103, "dur":85, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362193, "dur":107, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362308, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362375, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362435, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362511, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362572, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362638, "dur":260, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820362915, "dur":89, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820363012, "dur":126, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820363144, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820363230, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1743094820363311, "dur":84866, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820349402, "dur":3555, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820352963, "dur":972, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820353936, "dur":5195, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359139, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359252, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359337, "dur":102, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359330, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359440, "dur":101, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359546, "dur":91, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.XRModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359545, "dur":93, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.XRModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359639, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359721, "dur":82, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityWebRequestTextureModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359720, "dur":84, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityWebRequestTextureModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820359804, "dur":519, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360328, "dur":113, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ProfilerModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360326, "dur":116, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ProfilerModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360442, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360531, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.InputLegacyModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360529, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.InputLegacyModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360587, "dur":160, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360753, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.DSPGraphModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360752, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.DSPGraphModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360864, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360933, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.AnimationModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360932, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.AnimationModule.pdb" }}
-,{ "pid":12345, "tid":7, "ts":1743094820360989, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361053, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361117, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361196, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361266, "dur":89, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361362, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361433, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361489, "dur":120, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361488, "dur":122, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361610, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361715, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361793, "dur":132, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820361934, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362014, "dur":155, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362176, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362249, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362320, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362392, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362470, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362543, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362630, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362736, "dur":168, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362911, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820362988, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820363050, "dur":91, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\WinPixEventRuntime.dll" }}
-,{ "pid":12345, "tid":7, "ts":1743094820363048, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/WinPixEventRuntime.dll" }}
-,{ "pid":12345, "tid":7, "ts":1743094820363143, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820363201, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1743094820363262, "dur":57, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/level1.resS" }}
-,{ "pid":12345, "tid":7, "ts":1743094820363319, "dur":84865, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820349424, "dur":3541, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820352972, "dur":857, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820353830, "dur":5314, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359145, "dur":156, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359302, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359374, "dur":144, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359367, "dur":152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359520, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359603, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.VideoModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359601, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.VideoModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359658, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359752, "dur":101, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityTestProtocolModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359750, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityTestProtocolModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359854, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820359975, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360039, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.TerrainModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360037, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.TerrainModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360094, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360170, "dur":61, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.SpriteShapeModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360169, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.SpriteShapeModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360232, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360345, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360442, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ParticleSystemModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360441, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ParticleSystemModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360497, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360578, "dur":60, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.IMGUIModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360577, "dur":109, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.IMGUIModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360687, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360761, "dur":63, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.CrashReportingModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360760, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.CrashReportingModule.pdb" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360826, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820360933, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361042, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361104, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361171, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361249, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361327, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361389, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361453, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361512, "dur":437, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361511, "dur":438, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":8, "ts":1743094820361950, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362018, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362086, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362181, "dur":137, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362325, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362400, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362459, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362528, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362612, "dur":186, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362806, "dur":164, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820362979, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820363038, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820363106, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820363185, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820363253, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1743094820363312, "dur":84862, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1743094820349442, "dur":3531, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1743094820352980, "dur":796, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1743094820353776, "dur":5365, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1743094820359153, "dur":138, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":9, "ts":1743094820359291, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1743094820359350, "dur":91, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":9, "ts":1743094820359447, "dur":7466, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.pdb" }}
-,{ "pid":12345, "tid":9, "ts":1743094820359441, "dur":7473, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.TextMeshPro.pdb" }}
-,{ "pid":12345, "tid":9, "ts":1743094820366969, "dur":81227, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820349470, "dur":3510, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820352985, "dur":206, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820353191, "dur":5935, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359141, "dur":162, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359320, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359409, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359491, "dur":133, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359638, "dur":64, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.VRModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359629, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.VRModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359703, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359776, "dur":52, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityCurlModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359775, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityCurlModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359829, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820359950, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360027, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.TextCoreFontEngineModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360025, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.TextCoreFontEngineModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360080, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360153, "dur":57, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.SubstanceModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360152, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.SubstanceModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360211, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360287, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ScreenCaptureModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360285, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ScreenCaptureModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360343, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360416, "dur":63, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.PerformanceReportingModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360414, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.PerformanceReportingModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360480, "dur":170, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360657, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.GridModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360655, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.GridModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360709, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360772, "dur":74, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.CoreModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360770, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.CoreModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360847, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360914, "dur":50, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.AssetBundleModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360913, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.AssetBundleModule.pdb" }}
-,{ "pid":12345, "tid":10, "ts":1743094820360965, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361035, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361096, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361156, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361221, "dur":104, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361332, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361409, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361468, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361532, "dur":269, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361531, "dur":271, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361802, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820361881, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362031, "dur":106, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362148, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362235, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362303, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362384, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362447, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362525, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362592, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362651, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362709, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362768, "dur":145, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820362920, "dur":158, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820363084, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820363149, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820363211, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1743094820363298, "dur":84877, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820349497, "dur":3490, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820352988, "dur":6149, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359139, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359258, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359368, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359479, "dur":116, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359617, "dur":62, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.VehiclesModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359606, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.VehiclesModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359680, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359747, "dur":84, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityWebRequestAssetBundleModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359746, "dur":85, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359832, "dur":88, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359926, "dur":320, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UIElementsModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820359924, "dur":323, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UIElementsModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360247, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360367, "dur":78, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.PhysicsModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360365, "dur":81, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.PhysicsModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360446, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360524, "dur":57, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.InputModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360522, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.InputModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360582, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360666, "dur":67, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.GameCenterModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360665, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.GameCenterModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360734, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360885, "dur":61, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ClusterInputModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360884, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ClusterInputModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820360947, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361028, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.AIModule.pdb" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361080, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361148, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361212, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361271, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361358, "dur":107, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361472, "dur":151, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361630, "dur":198, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":11, "ts":1743094820361629, "dur":200, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":11, "ts":1743094820362265, "dur":2298, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":11, "ts":1743094820364603, "dur":83594, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820349538, "dur":3458, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820352996, "dur":6133, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359156, "dur":127, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359136, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359285, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359377, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359483, "dur":91, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359580, "dur":71, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.WindModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359579, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.WindModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359653, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359728, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.UnityWebRequestModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359726, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.UnityWebRequestModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359783, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359889, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820359983, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360050, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.TLSModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360049, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.TLSModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360102, "dur":157, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360281, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.SharedInternalsModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360280, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.SharedInternalsModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360336, "dur":148, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360490, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.LocalizationModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360489, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.LocalizationModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360542, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360608, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.HotReloadModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360606, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.HotReloadModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360663, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360775, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360886, "dur":76, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.ClothModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360885, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ClothModule.pdb" }}
-,{ "pid":12345, "tid":12, "ts":1743094820360964, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820361041, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820361107, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820361178, "dur":448, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820361636, "dur":90, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820361733, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820361806, "dur":183, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820362027, "dur":101, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820362146, "dur":92, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820362245, "dur":442, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820362694, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820362754, "dur":319, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820363079, "dur":180, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820363297, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1743094820363363, "dur":84824, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1743094820349563, "dur":3442, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1743094820353005, "dur":6125, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1743094820359136, "dur":154, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":13, "ts":1743094820359291, "dur":99, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1743094820359430, "dur":7077, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.State.pdb" }}
-,{ "pid":12345, "tid":13, "ts":1743094820359422, "dur":7086, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.VisualScripting.State.pdb" }}
-,{ "pid":12345, "tid":13, "ts":1743094820366509, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1743094820366587, "dur":81608, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1743094820349589, "dur":3424, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1743094820353014, "dur":6114, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359148, "dur":120, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359136, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359270, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359334, "dur":84, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359419, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359481, "dur":7074, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.pdb" }}
-,{ "pid":12345, "tid":14, "ts":1743094820359480, "dur":7077, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.Timeline.pdb" }}
-,{ "pid":12345, "tid":14, "ts":1743094820366557, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1743094820366633, "dur":81556, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1743094820349617, "dur":3403, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1743094820353020, "dur":6116, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1743094820359171, "dur":164, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
-,{ "pid":12345, "tid":15, "ts":1743094820359142, "dur":194, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":15, "ts":1743094820359337, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1743094820359415, "dur":7344, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Flow.pdb" }}
-,{ "pid":12345, "tid":15, "ts":1743094820359413, "dur":7347, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.VisualScripting.Flow.pdb" }}
-,{ "pid":12345, "tid":15, "ts":1743094820366760, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1743094820366817, "dur":81374, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820349653, "dur":3374, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820353028, "dur":6099, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359168, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_development_mono\\UnityPlayer.dll" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359136, "dur":128, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359265, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359325, "dur":144, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359470, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359541, "dur":72, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359540, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359615, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359740, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820359848, "dur":179, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360033, "dur":59, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.TerrainPhysicsModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360032, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.TerrainPhysicsModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360093, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360160, "dur":150, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.StreamingModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360159, "dur":159, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.StreamingModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360319, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360377, "dur":80, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\mono\\Managed\\UnityEngine.Physics2DModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360375, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.Physics2DModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360458, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360525, "dur":50, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.Physics2DModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360576, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.ImageConversionModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360628, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360725, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360832, "dur":162, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820360997, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/UnityEngine.AccessibilityModule.pdb" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361104, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361170, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361238, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361297, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361382, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361482, "dur":654, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":16, "ts":1743094820361481, "dur":656, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362144, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362224, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362299, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362360, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362420, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362479, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362546, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362633, "dur":303, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820362942, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820363014, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820363081, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820363146, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820363206, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1743094820363278, "dur":74, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/PSYSTEMAPP/PLSystems3D_Data/level1" }}
-,{ "pid":12345, "tid":16, "ts":1743094820363353, "dur":84832, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1743094820452340, "dur":1341, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid":12345, "tid":0, "ts":1750835859451572, "dur":14410, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859465985, "dur":1921, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859467931, "dur":460, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859468413, "dur":2384, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859470797, "dur":233656, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859704454, "dur":236, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859704827, "dur":3063, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1750835859468452, "dur":2371, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859470827, "dur":838, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859471665, "dur":1583, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859473256, "dur":8117, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1750835859473249, "dur":8125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1750835859481402, "dur":1631, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1750835859483084, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859483353, "dur":3534, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859486971, "dur":2361, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859489391, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859489494, "dur":3044, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859492615, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859492751, "dur":2714, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859495625, "dur":2899, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859498587, "dur":89, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859498695, "dur":4268, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859503147, "dur":18828, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859522032, "dur":1978, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859524689, "dur":29253, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859553996, "dur":422, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1750835859554436, "dur":19220, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ContentLoadModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1750835859573778, "dur":27284, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":1, "ts":1750835859601110, "dur":103366, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1750835859468705, "dur":2180, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1750835859470885, "dur":2348, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1750835859473258, "dur":29488, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
+,{ "pid":12345, "tid":2, "ts":1750835859473238, "dur":29509, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":2, "ts":1750835859502759, "dur":118, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1750835859503259, "dur":2844, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":2, "ts":1750835859506168, "dur":768, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1750835859506951, "dur":32106, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1750835859539171, "dur":4158, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1750835859543457, "dur":15759, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1750835859559273, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1750835859559358, "dur":20446, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1750835859579851, "dur":124607, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1750835859468414, "dur":2393, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1750835859470816, "dur":824, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1750835859471640, "dur":1598, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1750835859473269, "dur":7970, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
+,{ "pid":12345, "tid":3, "ts":1750835859473240, "dur":8000, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1750835859481271, "dur":1395, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1750835859482740, "dur":245, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/UnityPlayer.so" }}
+,{ "pid":12345, "tid":3, "ts":1750835859483019, "dur":45316, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/UnityPlayer.so" }}
+,{ "pid":12345, "tid":3, "ts":1750835859528389, "dur":5121, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1750835859533540, "dur":10918, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1750835859544509, "dur":585, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1750835859545112, "dur":17167, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1750835859562665, "dur":13270, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Plugins/libStandaloneFileBrowser.so" }}
+,{ "pid":12345, "tid":3, "ts":1750835859576019, "dur":128436, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1750835859468449, "dur":2367, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1750835859470823, "dur":909, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1750835859471732, "dur":1514, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1750835859473247, "dur":321, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1750835859503661, "dur":6248, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1750835859509965, "dur":183, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1750835859510165, "dur":47473, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1750835859557974, "dur":244, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1750835859558305, "dur":17370, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1750835859575741, "dur":10167, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":4, "ts":1750835859585953, "dur":118509, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859468479, "dur":2350, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859470835, "dur":902, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859471737, "dur":1508, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859473264, "dur":7840, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config" }}
+,{ "pid":12345, "tid":5, "ts":1750835859473246, "dur":7859, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1750835859481192, "dur":1439, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1750835859482722, "dur":196, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer.x86_64" }}
+,{ "pid":12345, "tid":5, "ts":1750835859486241, "dur":131, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859482935, "dur":3525, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer.x86_64" }}
+,{ "pid":12345, "tid":5, "ts":1750835859486611, "dur":1445, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859488167, "dur":2309, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859490912, "dur":102, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859491029, "dur":3152, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859494266, "dur":3013, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859497417, "dur":2564, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859500099, "dur":340, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859500457, "dur":3814, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859504369, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859504444, "dur":21634, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859526144, "dur":3669, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859529849, "dur":126, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859555723, "dur":58, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859529982, "dur":25810, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859555865, "dur":386, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859572629, "dur":162, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1750835859556281, "dur":16520, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1750835859572886, "dur":11391, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/level1" }}
+,{ "pid":12345, "tid":5, "ts":1750835859584335, "dur":120129, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859468504, "dur":2332, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859470843, "dur":844, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859471688, "dur":1555, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859473243, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1750835859487526, "dur":4348, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1750835859491955, "dur":98, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859492083, "dur":3125, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859495279, "dur":2610, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859497937, "dur":78, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859502728, "dur":53, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859498054, "dur":4737, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859502868, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859509766, "dur":225, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859502975, "dur":7027, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859510076, "dur":212, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859510321, "dur":31276, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.PropertiesModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859541673, "dur":121, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859541802, "dur":226, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859542032, "dur":14071, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859556154, "dur":118, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859556284, "dur":13271, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1750835859569648, "dur":796, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":6, "ts":1750835859570489, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1750835859570573, "dur":2313, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":6, "ts":1750835859572977, "dur":9084, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/level0.resS" }}
+,{ "pid":12345, "tid":6, "ts":1750835859582106, "dur":122363, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859468522, "dur":2330, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859470860, "dur":893, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859471753, "dur":1481, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859473237, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":7, "ts":1750835859474917, "dur":1122, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":7, "ts":1750835859476081, "dur":117, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1750835859476983, "dur":884, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1750835859477917, "dur":195, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1750835859478359, "dur":895, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1750835859479309, "dur":8733, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config" }}
+,{ "pid":12345, "tid":7, "ts":1750835859479307, "dur":8737, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":7, "ts":1750835859488063, "dur":1771, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":7, "ts":1750835859489894, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859489981, "dur":2951, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859493012, "dur":2754, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859498907, "dur":78, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859495896, "dur":3098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859499387, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859499491, "dur":4274, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859503857, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859503924, "dur":11217, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859515193, "dur":2337, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859541763, "dur":140, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859517559, "dur":24357, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859541973, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859542164, "dur":15098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859557357, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1750835859557480, "dur":20434, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1750835859577967, "dur":126493, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859468552, "dur":2317, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859470885, "dur":833, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859471718, "dur":1526, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859473245, "dur":127, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1750835859480112, "dur":1132, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1750835859481370, "dur":122, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1750835859483236, "dur":57, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859481902, "dur":1410, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1750835859483418, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859483580, "dur":3281, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859487004, "dur":3142, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859490268, "dur":3157, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859493495, "dur":2687, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859496236, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859496385, "dur":3831, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859500285, "dur":155, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859500461, "dur":4288, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859504835, "dur":125, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859504977, "dur":34407, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859539491, "dur":14693, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859554233, "dur":237, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1750835859554483, "dur":16024, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1750835859570581, "dur":6444, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":8, "ts":1750835859577076, "dur":127375, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859468576, "dur":2299, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859470876, "dur":290, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859471166, "dur":2073, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859473240, "dur":127, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1750835859479480, "dur":1112, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1750835859480647, "dur":219, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":9, "ts":1750835859480946, "dur":1451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":9, "ts":1750835859482442, "dur":92, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":9, "ts":1750835859482954, "dur":3929, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":9, "ts":1750835859487003, "dur":344, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859487365, "dur":3129, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859490846, "dur":142, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859491004, "dur":3493, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859494587, "dur":3436, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859498241, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859498324, "dur":3119, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859501505, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859509239, "dur":115, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859501596, "dur":7826, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859509485, "dur":1980, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859511506, "dur":33796, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859545365, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859563887, "dur":835, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1750835859545451, "dur":19290, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1750835859564800, "dur":245, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Resources/UnityPlayer.png" }}
+,{ "pid":12345, "tid":9, "ts":1750835859565165, "dur":11150, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Resources/UnityPlayer.png" }}
+,{ "pid":12345, "tid":9, "ts":1750835859576362, "dur":128094, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859468598, "dur":2291, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859470889, "dur":2342, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859473238, "dur":253, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/x86_64/libMonoPosixHelper.so" }}
+,{ "pid":12345, "tid":10, "ts":1750835859496402, "dur":2461, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/x86_64/libMonoPosixHelper.so" }}
+,{ "pid":12345, "tid":10, "ts":1750835859499006, "dur":3590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1750835859502799, "dur":144, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859502960, "dur":6883, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1750835859509906, "dur":254, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859541568, "dur":282, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859510175, "dur":31685, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1750835859541980, "dur":12638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1750835859554714, "dur":1243, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1750835859555979, "dur":18413, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1750835859574467, "dur":10852, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":10, "ts":1750835859585420, "dur":119049, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859468639, "dur":2257, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859470896, "dur":2345, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859473270, "dur":8037, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1750835859473247, "dur":8061, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1750835859481333, "dur":1424, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1750835859482812, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859483225, "dur":4374, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859487702, "dur":2309, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859490119, "dur":5370, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859495538, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859495606, "dur":2702, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859498358, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859498442, "dur":2818, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859501308, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859501410, "dur":3896, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859505384, "dur":356, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859505749, "dur":162, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859505914, "dur":34973, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859541104, "dur":13780, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859554945, "dur":1074, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1750835859556034, "dur":16392, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1750835859572707, "dur":366, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/resources.assets" }}
+,{ "pid":12345, "tid":11, "ts":1750835859573090, "dur":12790, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/resources.assets" }}
+,{ "pid":12345, "tid":11, "ts":1750835859585922, "dur":118543, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859468667, "dur":2220, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859470888, "dur":2344, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859473237, "dur":246, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/x86_64/libmonobdwgc-2.0.so" }}
+,{ "pid":12345, "tid":12, "ts":1750835859489005, "dur":6704, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/x86_64/libmonobdwgc-2.0.so" }}
+,{ "pid":12345, "tid":12, "ts":1750835859495810, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859495886, "dur":3130, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1750835859499126, "dur":3697, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1750835859502874, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859502982, "dur":4321, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1750835859507352, "dur":1963, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859543523, "dur":100, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859509364, "dur":34280, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1750835859572486, "dur":269, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859543758, "dur":29026, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1750835859572851, "dur":54, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1750835859572908, "dur":12397, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/level1.resS" }}
+,{ "pid":12345, "tid":12, "ts":1750835859585371, "dur":119083, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859468687, "dur":2199, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859470886, "dur":2349, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859473238, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":13, "ts":1750835859480203, "dur":1455, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":13, "ts":1750835859481712, "dur":109, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/config" }}
+,{ "pid":12345, "tid":13, "ts":1750835859481855, "dur":1324, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/config" }}
+,{ "pid":12345, "tid":13, "ts":1750835859483497, "dur":4167, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859487812, "dur":2361, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859490349, "dur":4633, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859495058, "dur":3182, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859498364, "dur":2802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859501220, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859501308, "dur":3539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859504946, "dur":136, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859505118, "dur":35486, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859540654, "dur":92, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859540805, "dur":15358, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859556211, "dur":324, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1750835859556574, "dur":21382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1750835859578014, "dur":126460, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1750835859468411, "dur":2391, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1750835859470807, "dur":2422, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1750835859473309, "dur":111, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Linux64\\Data\\boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1750835859473425, "dur":5011, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Linux64\\Data\\RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":14, "ts":1750835859478437, "dur":78, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Linux64\\Data\\ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":14, "ts":1750835859478676, "dur":138, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859478815, "dur":165, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859478982, "dur":274, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859479258, "dur":424, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859479683, "dur":565, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859480250, "dur":123, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859480374, "dur":366, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Users\\teoji\\Desktop\\Master 24-25\\TFM\\PSystemVisualizer\\P-System-Visualizer\\Library\\Bee\\PlayerScriptAssemblies\\Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":14, "ts":1750835859480806, "dur":107, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\Player47d5d7de-inputdata.json" }}
+,{ "pid":12345, "tid":14, "ts":1750835859473308, "dur":7683, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/LinuxPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1750835859481797, "dur":218028, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/LinuxPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1750835859703475, "dur":101, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\LinuxPlayerBuildProgram\\boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1750835859703474, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1750835859703605, "dur":811, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/boot.config" }}
+,{ "pid":12345, "tid":15, "ts":1750835859468732, "dur":2151, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859470883, "dur":2347, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859473240, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859474251, "dur":1709, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/app.info" }}
+,{ "pid":12345, "tid":15, "ts":1750835859475961, "dur":220, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":15, "ts":1750835859476670, "dur":1064, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":15, "ts":1750835859477778, "dur":10257, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.14f1\\Editor\\Data\\PlaybackEngines\\LinuxStandaloneSupport\\Variations\\linux64_player_nondevelopment_mono\\Data\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
+,{ "pid":12345, "tid":15, "ts":1750835859477777, "dur":10260, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":15, "ts":1750835859488070, "dur":1309, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":15, "ts":1750835859489497, "dur":2685, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859492338, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859492412, "dur":2762, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859495279, "dur":2587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859497946, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859498035, "dur":3661, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859501758, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859501838, "dur":57, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859501898, "dur":6062, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859508020, "dur":1294, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859509377, "dur":30918, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859540362, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859540480, "dur":5043, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859546287, "dur":449, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1750835859546756, "dur":20963, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1750835859567845, "dur":3732, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":15, "ts":1750835859571642, "dur":6972, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":15, "ts":1750835859578689, "dur":125786, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1750835859468761, "dur":2121, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1750835859470882, "dur":2351, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1750835859473237, "dur":254, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/x86_64/libmono-native.so" }}
+,{ "pid":12345, "tid":16, "ts":1750835859503097, "dur":9048, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/MonoBleedingEdge/x86_64/libmono-native.so" }}
+,{ "pid":12345, "tid":16, "ts":1750835859512194, "dur":462, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1750835859512676, "dur":30706, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1750835859543817, "dur":87, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1750835859543920, "dur":22713, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1750835859566701, "dur":1277, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":16, "ts":1750835859568232, "dur":5010, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":16, "ts":1750835859573344, "dur":25809, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/teoji/Desktop/Master 24-25/TFM/TFM_app_linux/PSystemVisualizer_Data/level0" }}
+,{ "pid":12345, "tid":16, "ts":1750835859599212, "dur":105261, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1750835859710363, "dur":878, "ph":"X", "name": "ProfilerWriteOutput" }
 ,

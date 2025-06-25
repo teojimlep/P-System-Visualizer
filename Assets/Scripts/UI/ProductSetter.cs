@@ -17,7 +17,6 @@ public class ProductSetter : MonoBehaviour
     private void Awake()
     {
         productsParent = transform.parent;
-        Debug.Log($"I am {transform.gameObject.name}, son of {transform.parent.gameObject.name}, son of {transform.parent.parent.gameObject.name}");
         panelProducts = productsParent.Find("PanelProducts")?.GetComponent<RectTransform>();
         Transform rulesSetterParent = transform.parent.parent;
         panelRules = rulesSetterParent.Find("Panel")?.GetComponent<RectTransform>();
@@ -88,7 +87,6 @@ public class ProductSetter : MonoBehaviour
             if (deletedIndex == savedPositions.Count)
             {
                 string absPathofParent = GetFullPath(transform.parent.parent);
-                Debug.Log(absPathofParent);
                 string path = $"{absPathofParent}/Products/Product_{deletedIndex - 1}/AddNewProduct";
                 ToggleChildByPath(path, absPath: true);
             }
@@ -110,7 +108,6 @@ public class ProductSetter : MonoBehaviour
             GameObject root = GameObject.Find(path.Split('/')[0]);
             if (root == null)
             {
-                Debug.LogWarning($"Root object '{path.Split('/')[0]}' not found.");
                 return;
             }
 
@@ -121,16 +118,10 @@ public class ProductSetter : MonoBehaviour
         {
             child = transform.Find(path);
         }
-        Debug.Log($"Toggling game transform {child}");
         if (child != null)
         {
             bool currentState = child.gameObject.activeSelf;
-            Debug.Log($"Toggling game object {child.gameObject}");
             child.gameObject.SetActive(!currentState); // Toggle the state
-        }
-        else
-        {
-            Debug.LogWarning($"Child with path '{path}' not found.");
         }
     }
 
@@ -141,22 +132,13 @@ public class ProductSetter : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        else
-        {
-            Debug.LogWarning($"Child with path '{path}' not found.");
-        }
     }
 
     public void ExpandPanelDownwards(RectTransform panel,float shift)
     {
-        
-        Debug.Log($" Trying: I am {transform.gameObject.name}, son of {transform.parent.gameObject.name}, son of {transform.parent.parent.gameObject.name}");
-        Debug.Log(shift);
         // Increase the height of the panel
         Vector2 currentSize = panel.sizeDelta;
         currentSize.y += shift; // Add the additional height
         panel.sizeDelta = currentSize; // Apply the new size
-        
-        Debug.Log($" Successed: I am {transform.gameObject.name}, son of {transform.parent.gameObject.name}, son of {transform.parent.parent.gameObject.name}");
     }
 }

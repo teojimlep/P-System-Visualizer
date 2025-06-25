@@ -68,18 +68,17 @@ public class RuleSetter : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning("No se encontró el componente RuleSetter en el objeto Rules.");
+                    LogManager.currentLogText = "Non valid rules. Clearing rules is advised.";
                 }
             }
             else
             {
-                Debug.LogWarning("No se encontró el objeto 'Rules' en la escena.");
+                LogManager.currentLogText = "Non valid rules. Clearing rules is advised.";
             }
         }
         // Ajustar el tamaño del contenedor Rules
         //AdjustRuleSetterPositions(this.RulesObject);
     }
-
     private void AdjustRuleSetterPositions(GameObject rulesObject)
     {
         // Take every child of RulesObject (They are RuleSetter_i) (do not take grand children, only immediate)
@@ -150,11 +149,9 @@ public class RuleSetter : MonoBehaviour
             Destroy(gameObject);
             if (nRuleSetters == deletedIndex)
             {
-                Debug.Log($"Entrado en el toggle: RuleSetter_{nRuleSetters - 1}/AddNewRule");
                 //ToggleChildByPath($"./RuleSetter_{nRuleSetters-1}/AddNewRule");
                 string rootName = transform.parent.name;
                 string path = $"{rootName}/RuleSetter_{nRuleSetters - 1}/AddNewRule";
-                Debug.Log(path);
                 ToggleChildByPath(path, absPath: true);
             }
         }
@@ -168,7 +165,7 @@ public class RuleSetter : MonoBehaviour
             GameObject root = GameObject.Find(path.Split('/')[0]);
             if (root == null)
             {
-                Debug.LogWarning($"Root object '{path.Split('/')[0]}' not found.");
+                LogManager.currentLogText = "Error occurred while handling rules. Clearing rules is advised.";
                 return;
             }
 
@@ -179,16 +176,14 @@ public class RuleSetter : MonoBehaviour
         {
             child = transform.Find(path);
         }
-        Debug.Log($"Toggling game transform {child}");
         if (child != null)
         {
             bool currentState = child.gameObject.activeSelf;
-            Debug.Log($"Toggling game object {child.gameObject}");
             child.gameObject.SetActive(!currentState); // Toggle the state
         }
         else
         {
-            Debug.LogWarning($"Child with path '{path}' not found.");
+            LogManager.currentLogText = "Error occurred while handling rules. Clearing rules is advised.";
         }
     }
 
@@ -201,7 +196,7 @@ public class RuleSetter : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Child with path '{path}' not found.");
+            LogManager.currentLogText = "Error occurred while handling rules. Clearing rules is advised.";
         }
     }
 }

@@ -40,14 +40,6 @@ public class RuleCleaner : MonoBehaviour
                     // Asignar el método AddNewRule del objeto Rules al evento del botón
                     newAddButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ruleSetterScript.AddNewRule);
                 }
-                else
-                {
-                    Debug.LogWarning("No se encontró el componente RuleSetter en el objeto Rules.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("No se encontró el objeto 'Rules' en la escena.");
             }
         }
     }
