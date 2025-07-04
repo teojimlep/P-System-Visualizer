@@ -25,7 +25,7 @@ public class PSystemVisualizer : MonoBehaviour
         if (length > 0f)
         {
             // Debug line
-            Debug.DrawLine(startPos, endPos, Color.black, 5f);
+            // Debug.DrawLine(startPos, endPos, Color.black, 5f);
 
             // Scale prefab before
             BranchPrefab.transform.localScale = new Vector3(branchRadius, length / 2f, branchRadius);
